@@ -14,8 +14,8 @@ public class OffersDAO {
 
 	private EntityManager em;
 
-	public OffersDAO() {
-		em = PersistenceManager.getEntityManager();
+	public OffersDAO(EntityManager em) {
+		this.em=em;
 	}
 
 	public boolean addOffers(Offers o) {
@@ -23,10 +23,10 @@ public class OffersDAO {
 		try {
 			em.getTransaction().begin();
 			em.persist(o);
-			em.flush();
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception ex) {
+			ex.printStackTrace();
 			return false;
 		}
 	}

@@ -15,8 +15,8 @@ public class CompaniesDAO {
 
 	private EntityManager em;
 
-	public CompaniesDAO() {
-		em = PersistenceManager.getEntityManager();
+	public CompaniesDAO( EntityManager em) {
+		this.em=em;
 	}
 
 	public boolean addCompany(Companies c) {

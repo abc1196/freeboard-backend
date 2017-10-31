@@ -1,18 +1,17 @@
 package com.project.freeboard.service;
 
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-import javax.crypto.spec.SecretKeySpec;
 import javax.jdo.annotations.Transactional;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
+import javax.persistence.EntityManager;
+
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
@@ -20,16 +19,19 @@ import com.google.api.server.spi.config.Named;
 import com.google.api.server.spi.response.BadRequestException;
 import com.google.api.server.spi.response.NotFoundException;
 import com.google.api.server.spi.response.UnauthorizedException;
+import com.project.freeboard.dao.AuctionsDAO;
+import com.project.freeboard.dao.OffersDAO;
 import com.project.freeboard.dao.StudentsDAO;
+import com.project.freeboard.entity.Auctions;
 import com.project.freeboard.entity.Companies;
+import com.project.freeboard.entity.Offers;
 import com.project.freeboard.entity.Students;
 import com.project.freeboard.util.JWT;
+import com.project.freeboard.util.PersistenceManager;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 
 @Api(name = "students", version = "v1", namespace = @ApiNamespace(ownerDomain = "service.freeboard.project.com", ownerName = "service.freeboard.project.com", packagePath = "/students"))
@@ -45,7 +47,13 @@ public class StudentsEP {
 	 * API Student Entity
 	 */
 
-	private StudentsDAO sDAO;
+	private EntityManager em = PersistenceManager.getEntityManager();
+
+	private StudentsDAO sDAO = new StudentsDAO(em);
+
+	private AuctionsDAO aDAO = new AuctionsDAO(em);
+
+	private OffersDAO oDAO = new OffersDAO(em);
 
 	@ApiMethod(name = "signUpStudent", path = "signup/student", httpMethod = ApiMethod.HttpMethod.POST)
 	public Students addStudent(@Named("email") String email, @Named("name") String name,
@@ -57,7 +65,7 @@ public class StudentsEP {
 
 		if (email != null && !email.equals("") && name != null && !name.equals("") && phone != null && !phone.equals("")
 				&& lastname != null && !lastname.equals("") && name != null && !name.equals("")) {
-			sDAO = new StudentsDAO();
+
 			if (sDAO.getStudentByEmail(email) != null) {
 				throw new BadRequestException("Email already in use.");
 			}
@@ -94,7 +102,7 @@ public class StudentsEP {
 
 	@ApiMethod(name = "updateStudent", path = "update/student", httpMethod = ApiMethod.HttpMethod.PUT)
 	public Students updateStudent(Students s) throws NotFoundException {
-		sDAO = new StudentsDAO();
+
 		if (sDAO.updateStudent(s)) {
 			return s;
 		} else {
@@ -105,7 +113,7 @@ public class StudentsEP {
 	@Transactional
 	@ApiMethod(name = "removeStudent", path = "remove/student/{email}", httpMethod = ApiMethod.HttpMethod.DELETE)
 	public Students removeStudent(@Named("email") String email) throws NotFoundException {
-		sDAO = new StudentsDAO();
+
 		Students students = sDAO.removeStudent(email);
 		if (students != null) {
 			return students;
@@ -114,18 +122,17 @@ public class StudentsEP {
 		}
 	}
 
-	@ApiMethod(name = "getAllStudents", path = "students", httpMethod = ApiMethod.HttpMethod.GET)
+	@ApiMethod(name = "getAllStudents", path = "getAllStudents", httpMethod = ApiMethod.HttpMethod.GET)
 	public List<Students> getStudents() {
 
-		sDAO = new StudentsDAO();
 		List<Students> students = sDAO.getStudents();
 
 		return students;
 	}
 
-	@ApiMethod(name = "getStudentByEmail", path = "students/email/{email}", httpMethod = ApiMethod.HttpMethod.GET)
+	@ApiMethod(name = "getStudentByEmail", path = "getStudentByEmail", httpMethod = ApiMethod.HttpMethod.GET)
 	public Students getStudentByCC(@Named("email") String email) throws NotFoundException {
-		sDAO = new StudentsDAO();
+
 		Students students = sDAO.getStudentByEmail(email);
 		if (students != null) {
 			return students;
@@ -151,6 +158,64 @@ public class StudentsEP {
 			throw new BadRequestException("Fill all the required fields.");
 		}
 
+	}
+
+	@ApiMethod(name = "addOffers", path = "offers/{idAuction}", httpMethod = ApiMethod.HttpMethod.POST)
+	public Offers addOffers(@Named("jwt") String jwt, @Named("idAuction") String idAuction,
+			@Named("price") String price) throws NotFoundException, UnauthorizedException {
+
+		if (jwt != null) {
+
+			Students students = getCurrentStudent(jwt);
+			String idoffers = createHash();
+			Date created = getCurrentDate();
+			String state = "pending";
+			Auctions actualAuction = aDAO.getAuctionsById(idAuction);
+			Offers offer = new Offers(idoffers, state, created);
+			offer.setPrice(price);
+			offer.setAuctionsIdauctions(actualAuction);
+			offer.setStudentsId(students);
+			actualAuction.getOffersList().add(offer);
+			students.getOffersList().add(offer);
+			if (oDAO.addOffers(offer)) {
+				return offer;
+			} else {
+				throw new NotFoundException("Offers no se pudo agregar.");
+			}
+		} else {
+			throw new UnauthorizedException("empty jwt");
+		}
+
+	}
+
+	/**
+	 * * Allows retrieve the name, lastname and email of the logged user *
+	 * <p>
+	 * * * @param token * the JSON Web Token * @return The logged user
+	 * information * @throws UnauthorizedException * If the token isn't valid If
+	 * the token is expired
+	 */
+	private Students getCurrentStudent(String token) throws UnauthorizedException {
+		String userEmail = null;
+		Students user = null;
+		try {
+			Claims claims = Jwts.parser().setSigningKey(JWT.SECRET).parseClaimsJws(token).getBody();
+			userEmail = claims.getId();
+		} catch (SignatureException e) {
+			throw new UnauthorizedException("Invalid token");
+		} catch (ExpiredJwtException e) {
+			throw new UnauthorizedException("Expired token");
+		}
+
+		if (userEmail != null) {
+
+			user = sDAO.getStudentByEmail(userEmail);
+
+			if (user == null) {
+				throw new UnauthorizedException("Invalid access");
+			}
+		}
+		return user;
 	}
 
 	private Date getCurrentDate() {
@@ -180,35 +245,5 @@ public class StudentsEP {
 
 	private boolean isValidPassword(String password) {
 		return password.length() >= PASSWORD_MIN_LENGTH;
-	}
-
-	/**
-	 * * Allows retrieve the name, lastname and email of the logged user *
-	 * <p>
-	 * * * @param token * the JSON Web Token * @return The logged user
-	 * information * @throws UnauthorizedException * If the token isn't valid If
-	 * the token is expired
-	 */
-	public Students getCurrentStudent(String token) throws UnauthorizedException {
-		String userEmail = null;
-		Students user = null;
-		try {
-			Claims claims = Jwts.parser().setSigningKey(JWT.SECRET).parseClaimsJws(token).getBody();
-			userEmail = claims.getId();
-		} catch (SignatureException e) {
-			throw new UnauthorizedException("Invalid token");
-		} catch (ExpiredJwtException e) {
-			throw new UnauthorizedException("Expired token");
-		}
-
-		if (userEmail != null) {
-
-			user = sDAO.getStudentByEmail(userEmail);
-
-			if (user == null) {
-				throw new UnauthorizedException("Invalid access");
-			}
-		}
-		return user;
 	}
 }

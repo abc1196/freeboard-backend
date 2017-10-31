@@ -14,8 +14,8 @@ public class AuctionsDAO {
 
 	private EntityManager em;
 
-	public AuctionsDAO() {
-		em = PersistenceManager.getEntityManager();
+	public AuctionsDAO(EntityManager em) {
+		this.em = em;
 	}
 
 	public boolean addAuctions(Auctions e) {

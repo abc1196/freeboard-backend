@@ -14,8 +14,8 @@ public class StudentsDAO {
 
 	private EntityManager em;
 
-	public StudentsDAO() {
-		em = PersistenceManager.getEntityManager();
+	public StudentsDAO(EntityManager em) {
+		this.em = em;
 	}
 
 	public boolean addStudent(Students s) {

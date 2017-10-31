@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 import javax.jdo.annotations.Transactional;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
+import javax.persistence.EntityManager;
 
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
@@ -19,9 +20,11 @@ import com.google.api.server.spi.response.BadRequestException;
 import com.google.api.server.spi.response.NotFoundException;
 import com.google.api.server.spi.response.UnauthorizedException;
 import com.project.freeboard.dao.CompaniesDAO;
+import com.project.freeboard.dao.StudentsDAO;
 import com.project.freeboard.entity.Auctions;
 import com.project.freeboard.entity.Companies;
 import com.project.freeboard.util.JWT;
+import com.project.freeboard.util.PersistenceManager;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -37,7 +40,11 @@ public class CompaniesEP {
 
 	private final static int PASSWORD_MIN_LENGTH = 8;
 
-	private CompaniesDAO cDAO = new CompaniesDAO();
+	private EntityManager em = PersistenceManager.getEntityManager();
+
+	private CompaniesDAO cDAO = new CompaniesDAO(em);
+
+	private StudentsDAO sDAO = new StudentsDAO(em);
 
 	/**
 	 * API Company Entity
@@ -134,7 +141,6 @@ public class CompaniesEP {
 	@ApiMethod(name = "getAllCompanies", path = "companies", httpMethod = ApiMethod.HttpMethod.GET)
 	public List<Companies> getCompanies() {
 
-		cDAO = new CompaniesDAO();
 		List<Companies> companies = cDAO.getCompanies();
 
 		return companies;
@@ -225,7 +231,7 @@ public class CompaniesEP {
 	 * information * @throws UnauthorizedException * If the token isn't valid If
 	 * the token is expired
 	 */
-	public Companies getCurrentCompany(String token) throws UnauthorizedException {
+	private Companies getCurrentCompany(String token) throws UnauthorizedException {
 		String userEmail = null;
 		Companies user = null;
 		try {
