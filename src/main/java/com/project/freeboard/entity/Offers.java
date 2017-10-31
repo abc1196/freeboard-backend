@@ -31,7 +31,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
     @UniqueConstraint(columnNames = {"idoffers"})})
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Offers.findAll", query = "SELECT o FROM Offers o")
+    @NamedQuery(name = "Offers.findAll", query = "SELECT o FROM Offers o"),
+    @NamedQuery(name = "Offers.getOffersByAuction", query = "SELECT o FROM Offers o WHERE o.auctionsIdauctions = :auctionsIdauctions"),
+    @NamedQuery(name = "Offers.getOffersByStudent", query = "SELECT o FROM Offers o WHERE o.studentsId = :studentsId")
     , @NamedQuery(name = "Offers.findByIdoffers", query = "SELECT o FROM Offers o WHERE o.idoffers = :idoffers")
     , @NamedQuery(name = "Offers.findByPrice", query = "SELECT o FROM Offers o WHERE o.price = :price")
     , @NamedQuery(name = "Offers.findByPaid", query = "SELECT o FROM Offers o WHERE o.paid = :paid")

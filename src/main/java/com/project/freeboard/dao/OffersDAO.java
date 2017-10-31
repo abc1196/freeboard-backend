@@ -15,7 +15,7 @@ public class OffersDAO {
 	private EntityManager em;
 
 	public OffersDAO(EntityManager em) {
-		this.em=em;
+		this.em = em;
 	}
 
 	public boolean addOffers(Offers o) {
@@ -49,68 +49,51 @@ public class OffersDAO {
 			Offers Offers = em.find(Offers.class, id);
 			em.getTransaction().begin();
 			em.remove(Offers);
-			em.flush();
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
-			em.close();
 			return false;
 		}
 	}
 
 	public List<Offers> getOffers() {
 		List<Offers> Offerss = null;
-		em.getTransaction().begin();
 		TypedQuery<Offers> q = em.createNamedQuery("Offers.findAll", Offers.class);
 		try {
 			Offerss = q.getResultList();
 		} catch (NoResultException e) {
 			Offerss = new ArrayList<Offers>();
 		}
-
-		em.flush();
-		em.getTransaction().commit();
 		return Offerss;
 	}
 
 	public List<Offers> getOfferssByStudent(String id) {
 		List<Offers> Offerss = null;
-		em.getTransaction().begin();
 		TypedQuery<Offers> q = em.createNamedQuery("Offers.getOffersByStudent", Offers.class);
-		q.setParameter("students_cc", id);
+		q.setParameter("studentsId", id);
 		try {
 			Offerss = q.getResultList();
 		} catch (NoResultException e) {
 			Offerss = new ArrayList<Offers>();
 		}
-
-		em.flush();
-		em.getTransaction().commit();
 		return Offerss;
 	}
 
 	public List<Offers> getOfferssByAuction(String id) {
 		List<Offers> Offerss = null;
-		em.getTransaction().begin();
 		TypedQuery<Offers> q = em.createNamedQuery("Offers.getOffersByAuction", Offers.class);
-		q.setParameter("auctions_idauctions", id);
+		q.setParameter("auctionsIdauctions", id);
 		try {
 			Offerss = q.getResultList();
 		} catch (NoResultException e) {
 			Offerss = new ArrayList<Offers>();
 		}
-
-		em.flush();
-		em.getTransaction().commit();
 		return Offerss;
 	}
 
 	public Offers getOffersById(String id) {
 
-		em.getTransaction().begin();
 		Offers Offers = em.find(Offers.class, id);
-		em.flush();
-		em.getTransaction().commit();
 		return Offers;
 	}
 

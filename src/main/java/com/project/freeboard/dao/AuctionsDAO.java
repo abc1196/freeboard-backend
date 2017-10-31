@@ -55,15 +55,15 @@ public class AuctionsDAO {
 	}
 
 	public List<Auctions> getAuctions() {
-		List<Auctions> equipos = null;
+		List<Auctions> auctions = null;
 		TypedQuery<Auctions> q = em.createNamedQuery("Auctions.findAll", Auctions.class);
 		try {
-			equipos = q.getResultList();
+			auctions = q.getResultList();
 		} catch (NoResultException e) {
-			equipos = new ArrayList<Auctions>();
+			auctions = new ArrayList<Auctions>();
 		}
 
-		return equipos;
+		return auctions;
 	}
 
 	public Auctions getAuctionsById(String id) {
@@ -71,31 +71,49 @@ public class AuctionsDAO {
 		return auction;
 	}
 
-	public Auctions getAuctionsByType(String type) {
+	public List<Auctions> getAuctionsByType(String type) {
 
-		Auctions auction = null;
+		List<Auctions> auctions = null;
 		TypedQuery<Auctions> query = em.createNamedQuery("Auctions.findByType", Auctions.class);
-		query.setParameter("type", type);
-		auction = query.getSingleResult();
-		return auction;
+
+		try {
+			query.setParameter("type", type);
+			auctions = query.getResultList();
+		} catch (NoResultException e) {
+			auctions = new ArrayList<Auctions>();
+		}
+
+		return auctions;
 	}
 
-	public Auctions getAuctionsByTime(String time) {
+	public List<Auctions> getAuctionsByTime(String time) {
 
-		Auctions auction = null;
+		List<Auctions> auctions = null;
 		TypedQuery<Auctions> query = em.createNamedQuery("Auctions.findByTime", Auctions.class);
-		query.setParameter("time", time);
-		auction = query.getSingleResult();
-		return auction;
+
+		try {
+			query.setParameter("time", time);
+			auctions = query.getResultList();
+		} catch (NoResultException e) {
+			auctions = new ArrayList<Auctions>();
+		}
+
+		return auctions;
 	}
 
-	public Auctions getAuctionsByPrice(String price) {
+	public List<Auctions> getAuctionsByPrice(String price) {
 
-		Auctions auction = null;
+		List<Auctions> auctions = null;
 		TypedQuery<Auctions> query = em.createNamedQuery("Auctions.findByPrice", Auctions.class);
-		query.setParameter("price", price);
-		auction = query.getSingleResult();
-		return auction;
+
+		try {
+			query.setParameter("price", price);
+			auctions = query.getResultList();
+		} catch (NoResultException e) {
+			auctions = new ArrayList<Auctions>();
+		}
+
+		return auctions;
 	}
 
 }

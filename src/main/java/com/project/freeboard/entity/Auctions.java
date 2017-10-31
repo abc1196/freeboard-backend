@@ -41,7 +41,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
     , @NamedQuery(name = "Auctions.findByMainColor", query = "SELECT a FROM Auctions a WHERE a.mainColor = :mainColor")
     , @NamedQuery(name = "Auctions.findBySecundaryColor", query = "SELECT a FROM Auctions a WHERE a.secundaryColor = :secundaryColor")
     , @NamedQuery(name = "Auctions.findByDescription", query = "SELECT a FROM Auctions a WHERE a.description = :description")
-    , @NamedQuery(name = "Auctions.findByTime", query = "SELECT a FROM Auctions a WHERE a.time = :time")
+    , @NamedQuery(name = "Auctions.findByTime", query = "SELECT a FROM Auctions a WHERE a.time <= :time")
     , @NamedQuery(name = "Auctions.findByPrice", query = "SELECT a FROM Auctions a WHERE a.price = :price")
     , @NamedQuery(name = "Auctions.findByCreated", query = "SELECT a FROM Auctions a WHERE a.created = :created")
     , @NamedQuery(name = "Auctions.findByUpdated", query = "SELECT a FROM Auctions a WHERE a.updated = :updated")})
