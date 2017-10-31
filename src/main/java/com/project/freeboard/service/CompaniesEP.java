@@ -9,7 +9,6 @@ import java.util.UUID;
 import java.util.regex.Pattern;
 
 import javax.jdo.annotations.Transactional;
-import javax.mail.Message;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.persistence.EntityManager;
@@ -28,6 +27,7 @@ import com.project.freeboard.dao.StudentsDAO;
 import com.project.freeboard.entity.Auctions;
 import com.project.freeboard.entity.Companies;
 import com.project.freeboard.entity.Offers;
+import com.project.freeboard.entity.Students;
 import com.project.freeboard.util.JWT;
 import com.project.freeboard.util.PersistenceManager;
 
@@ -176,27 +176,6 @@ public class CompaniesEP {
 		}
 	}
 
-	private Date getCurrentDate() {
-		return Calendar.getInstance().getTime();
-	}
-
-	private String createHash() {
-		return UUID.randomUUID().toString().replaceAll("-", "");
-	}
-
-	private boolean isValidEmail(String email) {
-		Pattern emailPattern = Pattern.compile(EMAIL_PATTERN);
-		try {
-			InternetAddress address = new InternetAddress(email);
-			address.validate();
-			return emailPattern.matcher(email).matches();
-		} catch (AddressException e) {
-			// TODO Auto-generated catch block
-			return false;
-		}
-
-	}
-
 	@ApiMethod(name = "addAuction", path = "companies/addauction", httpMethod = ApiMethod.HttpMethod.POST)
 	public Auctions addAuction(@Named("jwt") String jwt, @Named("name") String name, @Named("type") String type,
 			@Named("size") String size, @Named("mainColor") String mainColor,
@@ -221,45 +200,6 @@ public class CompaniesEP {
 			throw new BadRequestException("empty jwt");
 		}
 
-	}
-
-	private boolean isValidPhone(String phone) {
-		Pattern phonePattern = Pattern.compile(PHONE_PATTERN);
-		return phonePattern.matcher(phone).matches();
-	}
-
-	private boolean isValidPassword(String password) {
-		return password.length() >= PASSWORD_MIN_LENGTH;
-	}
-
-	/**
-	 * * Allows retrieve the name, lastname and email of the logged user *
-	 * <p>
-	 * * * @param token * the JSON Web Token * @return The logged user
-	 * information * @throws UnauthorizedException * If the token isn't valid If
-	 * the token is expired
-	 */
-	private Companies getCurrentCompany(String token) throws UnauthorizedException {
-		String userEmail = null;
-		Companies user = null;
-		try {
-			Claims claims = Jwts.parser().setSigningKey(JWT.SECRET).parseClaimsJws(token).getBody();
-			userEmail = claims.getId();
-		} catch (SignatureException e) {
-			throw new UnauthorizedException("Invalid token");
-		} catch (ExpiredJwtException e) {
-			throw new UnauthorizedException("Expired token");
-		}
-
-		if (userEmail != null) {
-
-			user = cDAO.getCompanyByEmail(userEmail);
-
-			if (user == null) {
-				throw new UnauthorizedException("Invalid access");
-			}
-		}
-		return user;
 	}
 
 	@ApiMethod(name = "updateAuction", path = "updateAuction", httpMethod = ApiMethod.HttpMethod.PUT)
@@ -296,6 +236,25 @@ public class CompaniesEP {
 		List<Auctions> auctions = aDAO.getAuctions();
 
 		return auctions;
+	}
+
+	@ApiMethod(name = "getStudentId", path = "offers/auction/{offerid}", httpMethod = ApiMethod.HttpMethod.GET)
+	public Students getStudentIdstudents(@Named("jwt") String jwt, @Named("studentid") String id)
+			throws NotFoundException, UnauthorizedException {
+
+		if (jwt != null) {
+			getCurrentCompany(jwt);
+			Auctions auction = aDAO.getAuctionsById(id);
+			if (auction != null) {
+				Offers offer = auction.getWinnerOffer();
+				Students companie = offer.getStudentsId();
+				return companie;
+			} else {
+				throw new NotFoundException("Oferta no existe");
+			}
+		} else {
+			throw new NotFoundException("empty jwt");
+		}
 	}
 
 	@ApiMethod(name = "getAuctionById", path = "auctionsById/{id}", httpMethod = ApiMethod.HttpMethod.GET)
@@ -364,6 +323,66 @@ public class CompaniesEP {
 		Offers winner = aDAO.getAuctionsById(auctionid).closeAuction();
 
 		return winner;
+	}
+
+	private Date getCurrentDate() {
+		return Calendar.getInstance().getTime();
+	}
+
+	private String createHash() {
+		return UUID.randomUUID().toString().replaceAll("-", "");
+	}
+
+	private boolean isValidEmail(String email) {
+		Pattern emailPattern = Pattern.compile(EMAIL_PATTERN);
+		try {
+			InternetAddress address = new InternetAddress(email);
+			address.validate();
+			return emailPattern.matcher(email).matches();
+		} catch (AddressException e) {
+			// TODO Auto-generated catch block
+			return false;
+		}
+
+	}
+
+	private boolean isValidPhone(String phone) {
+		Pattern phonePattern = Pattern.compile(PHONE_PATTERN);
+		return phonePattern.matcher(phone).matches();
+	}
+
+	private boolean isValidPassword(String password) {
+		return password.length() >= PASSWORD_MIN_LENGTH;
+	}
+
+	/**
+	 * * Allows retrieve the name, lastname and email of the logged user *
+	 * <p>
+	 * * * @param token * the JSON Web Token * @return The logged user
+	 * information * @throws UnauthorizedException * If the token isn't valid If
+	 * the token is expired
+	 */
+	private Companies getCurrentCompany(String token) throws UnauthorizedException {
+		String userEmail = null;
+		Companies user = null;
+		try {
+			Claims claims = Jwts.parser().setSigningKey(JWT.SECRET).parseClaimsJws(token).getBody();
+			userEmail = claims.getId();
+		} catch (SignatureException e) {
+			throw new UnauthorizedException("Invalid token");
+		} catch (ExpiredJwtException e) {
+			throw new UnauthorizedException("Expired token");
+		}
+
+		if (userEmail != null) {
+
+			user = cDAO.getCompanyByEmail(userEmail);
+
+			if (user == null) {
+				throw new UnauthorizedException("Invalid access");
+			}
+		}
+		return user;
 	}
 
 }
