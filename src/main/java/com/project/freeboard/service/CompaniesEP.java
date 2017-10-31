@@ -238,8 +238,8 @@ public class CompaniesEP {
 		return auctions;
 	}
 
-	@ApiMethod(name = "getStudentId", path = "offers/auction/{offerid}", httpMethod = ApiMethod.HttpMethod.GET)
-	public Students getStudentIdstudents(@Named("jwt") String jwt, @Named("studentid") String id)
+	@ApiMethod(name = "getStudentId", path = "offers/auction/{auctionid}", httpMethod = ApiMethod.HttpMethod.GET)
+	public Students getStudentIdstudents(@Named("jwt") String jwt, @Named("auctionid") String id)
 			throws NotFoundException, UnauthorizedException {
 
 		if (jwt != null) {
@@ -247,10 +247,10 @@ public class CompaniesEP {
 			Auctions auction = aDAO.getAuctionsById(id);
 			if (auction != null) {
 				Offers offer = auction.getWinnerOffer();
-				Students companie = offer.getStudentsId();
-				return companie;
+				Students student = offer.getStudentsId();
+				return student;
 			} else {
-				throw new NotFoundException("Oferta no existe");
+				throw new NotFoundException("auction does not exists");
 			}
 		} else {
 			throw new NotFoundException("empty jwt");
@@ -304,9 +304,9 @@ public class CompaniesEP {
 	public Offers selectWinnerOffer(@Named("offerid") String offerid, @Named("auctionid") String auctionid) {
 
 		Offers winner = oDAO.getOffersById(offerid);
-		oDAO.getOffersById(offerid).setState(Offers.ACCEPTED);
+		winner.setState(Offers.ACCEPTED);
 		aDAO.getAuctionsById(auctionid).setWinnerOffer(winner);
-
+		oDAO.updateOffers(winner);
 		return winner;
 	}
 
@@ -320,8 +320,18 @@ public class CompaniesEP {
 
 	@ApiMethod(name = "closeAuction", path = "auctionsClose/{auctionid}", httpMethod = ApiMethod.HttpMethod.GET)
 	public Offers closeAuction(@Named("auctionid") String auctionid) {
-		Offers winner = aDAO.getAuctionsById(auctionid).closeAuction();
+		Auctions auction = aDAO.getAuctionsById(auctionid);
+		Offers winner = null;
+		for (int i = 0; i < auction.getOffersList().size(); i++) {
 
+			if (auction.getOffersList().get(i).getState().equals(Offers.ACCEPTED)) {
+				winner = auction.getOffersList().get(i);
+			} else {
+				auction.getOffersList().get(i).setState(Offers.DENIED);
+			}
+		}
+
+		aDAO.updateAuctions(auction);
 		return winner;
 	}
 

@@ -24,9 +24,7 @@
 		<init-param>
 			<param-name>services</param-name>
 			<param-value>com.project.freeboard.service.CompaniesEP,
-				com.project.freeboard.service.StudentsEP,
-				com.project.freeboard.service.AuctionsEP,
-				com.project.freeboard.service.OffersEP
+				com.project.freeboard.service.StudentsEP
 			</param-value>
 		</init-param>
 	</servlet>

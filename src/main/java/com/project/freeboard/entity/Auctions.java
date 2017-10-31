@@ -278,20 +278,6 @@ public class Auctions implements Serializable {
 		return "com.project.freeboard.entity.Auctions[ idauctions=" + idauctions + " ]";
 	}
 
-	public Offers closeAuction() {
-		// TODO Auto-generated method stub
-		Offers winner = null;
-		for (int i = 0; i < offersList.size(); i++) {
 
-			if (offersList.get(i).getState().equals(Offers.ACCEPTED)) {
-				winner = offersList.get(i);
-			} else {
-				offersList.get(i).setState(Offers.DENIED);
-			}
-		}
-
-		return winner;
-
-	}
 
 }

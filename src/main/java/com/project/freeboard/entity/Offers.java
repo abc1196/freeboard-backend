@@ -45,7 +45,7 @@ public class Offers implements Serializable {
 
     private static final long serialVersionUID = 1L;
     public final static String ACCEPTED="ACCEPTED";
-    public final static String DENIED="ACCEPTED";
+    public final static String DENIED="DENIED";
     public final static String PENDING="PENDING";
     
     @Id

@@ -102,12 +102,13 @@ public class StudentsEP {
 	}
 
 	@ApiMethod(name = "loginStudent", path = "login/student", httpMethod = ApiMethod.HttpMethod.POST)
-	public JWT loginStudent(@Named("email") String email, @Named("password") String password) throws Exception {
+	public JWT loginStudent(@Named("email") String email, @Named("password") String password)
+			throws NotFoundException, UnauthorizedException, BadRequestException {
 		if (email != null && !email.equals("") && password != null && !password.equals("")) {
 
 			Students student = sDAO.getStudentByEmail(email);
 			if (student == null) {
-				throw new Exception("Email doesn't Exist.");
+				throw new NotFoundException("Email doesn't Exist.");
 			} else if (student.getPassword().equals(password)) {
 				return new JWT(JWT.generateToken(student));
 			} else {
@@ -196,8 +197,8 @@ public class StudentsEP {
 	}
 
 	@Transactional
-	@ApiMethod(name = "removeOffers", path = "offers/{id}", httpMethod = ApiMethod.HttpMethod.DELETE)
-	public Message removeOffers(@Named("jwt") String jwt, @Named("idAuction") String idAuction, @Named("id") String id)
+	@ApiMethod(name = "removeOffers", path = "offers/{idoffer}", httpMethod = ApiMethod.HttpMethod.DELETE)
+	public Message removeOffers(@Named("jwt") String jwt, @Named("idAuction") String idAuction, @Named("idoffer") String id)
 			throws NotFoundException, UnauthorizedException {
 
 		if (jwt != null) {
@@ -220,7 +221,7 @@ public class StudentsEP {
 		if (jwt != null) {
 
 			Students student = getCurrentStudent(jwt);
-			List<Offers> myOffers = oDAO.getOfferssByStudent(student.getEmail());
+			List<Offers> myOffers = oDAO.getOfferssByStudent(student);
 			return myOffers;
 		} else {
 			throw new UnauthorizedException("empty jwt");

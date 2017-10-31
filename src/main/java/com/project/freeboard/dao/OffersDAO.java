@@ -8,6 +8,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import com.project.freeboard.entity.Offers;
+import com.project.freeboard.entity.Students;
 import com.project.freeboard.util.PersistenceManager;
 
 public class OffersDAO {
@@ -26,7 +27,6 @@ public class OffersDAO {
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception ex) {
-			ex.printStackTrace();
 			return false;
 		}
 	}
@@ -34,10 +34,8 @@ public class OffersDAO {
 	public boolean updateOffers(Offers o) {
 		try {
 			em.getTransaction().begin();
-			em.merge(o); // cascades the tool & skill relationships
-			em.flush();
+			em.merge(o);
 			em.getTransaction().commit();
-			em.close();
 			return true;
 		} catch (Exception ex) {
 			return false;
@@ -67,10 +65,10 @@ public class OffersDAO {
 		return Offerss;
 	}
 
-	public List<Offers> getOfferssByStudent(String id) {
+	public List<Offers> getOfferssByStudent(Students student) {
 		List<Offers> Offerss = null;
 		TypedQuery<Offers> q = em.createNamedQuery("Offers.getOffersByStudent", Offers.class);
-		q.setParameter("studentsId", id);
+		q.setParameter("studentsId", student);
 		try {
 			Offerss = q.getResultList();
 		} catch (NoResultException e) {

@@ -56,7 +56,7 @@ public class StudentsDAO {
 
 	public List<Students> getStudents() {
 		List<Students> students = null;
-		TypedQuery<Students> q = em.createNamedQuery("Students.getAll", Students.class);
+		TypedQuery<Students> q = em.createNamedQuery("Students.findAll", Students.class);
 		try {
 			students = q.getResultList();
 		} catch (NoResultException e) {
