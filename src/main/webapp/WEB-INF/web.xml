@@ -18,15 +18,6 @@
 		<url-pattern>/payment</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>loginCompany</servlet-name>
-		<servlet-class>com.project.freeboard.servlets.loginCompany
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>loginCompany</servlet-name>
-		<url-pattern>/logincompany</url-pattern>
-	</servlet-mapping>
-	<servlet>
 		<servlet-name>EndpointsServlet</servlet-name>
 		<servlet-class>com.google.api.server.spi.EndpointsServlet
 		</servlet-class>

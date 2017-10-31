@@ -25,7 +25,6 @@
 
 
 		<modelmapper.version>1.0.0</modelmapper.version>
-		<hibernate.version>5.2.11.Final</hibernate.version>
 
 		<cloudsql.url>jdbc:google:mysql://cloud-computing-freeboard:us-central1:db-freeboard/db-freeboard?zeroDateTimeBehavior=convertToNull</cloudsql.url>
 		<cloudsql.url.dev>jdbc:mysql://localhost:3303/freeboardv1?zeroDateTimeBehavior=convertToNull</cloudsql.url.dev>
@@ -38,8 +37,6 @@
 			<version>4.2.6</version>
 			<type>pom</type>
 		</dependency>
-		<!-- dependency> <groupId>org.datanucleus</groupId> <artifactId>datanucleus-api-jpa</artifactId> 
-			<version>[5.0.0-m1, 5.9)</version> </dependency -->
 		<dependency>
 			<groupId>org.datanucleus</groupId>
 			<artifactId>javax.persistence</artifactId>
@@ -130,17 +127,6 @@
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
 			<version>0.6.0</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-admin -->
-		<dependency>
-			<groupId>com.google.firebase</groupId>
-			<artifactId>firebase-admin</artifactId>
-			<version>5.2.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>22.0</version>
 		</dependency>
 	</dependencies>
 

@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.UUID;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -15,11 +14,7 @@ import javax.jdo.annotations.Transactional;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 
-import com.google.api.server.spi.auth.EspAuthenticator;
-import com.google.api.server.spi.auth.common.User;
 import com.google.api.server.spi.config.Api;
-import com.google.api.server.spi.config.ApiIssuer;
-import com.google.api.server.spi.config.ApiIssuerAudience;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
@@ -38,9 +33,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 
-@Api(name = "companies", version = "v1", authenticators = { EspAuthenticator.class }, issuers = {
-		@ApiIssuer(name = "firebase", issuer = "https://securetoken.google.com/freeboard-develop", jwksUri = "https://www.googleapis.com/service_accounts/v1/metadata/x509/securetoken@system.gserviceaccount.com") }, issuerAudiences = {
-				@ApiIssuerAudience(name = "firebase", audiences = "freeboard-develop") }, namespace = @ApiNamespace(ownerDomain = "service.freeboard.project.com", ownerName = "service.freeboard.project.com", packagePath = "/companies"))
+@Api(name = "companies", version = "v1", namespace = @ApiNamespace(ownerDomain = "service.freeboard.project.com", ownerName = "service.freeboard.project.com", packagePath = "/companies"))
 public class CompaniesEP {
 
 	private final static String EMAIL_PATTERN = "^[A-Za-z0-9+_.-]+@(.+)$";
@@ -65,7 +58,7 @@ public class CompaniesEP {
 		if (email != null && !email.equals("") && name != null && !name.equals("") && phone != null && !phone.equals("")
 				&& address != null && !address.equals("") && password != null && !password.equals("")
 				&& contactPerson != null && !contactPerson.equals("")) {
-			//cDAO = new CompaniesDAO();
+			// cDAO = new CompaniesDAO();
 			if (cDAO.getCompanyByEmail(email) != null) {
 				throw new BadRequestException("Email already in use.");
 			}
@@ -102,7 +95,7 @@ public class CompaniesEP {
 
 	@ApiMethod(name = "updateCompany", path = "update/company", httpMethod = ApiMethod.HttpMethod.PUT)
 	public Companies updateCompany(Companies c) throws NotFoundException {
-		//cDAO = new CompaniesDAO();
+		// cDAO = new CompaniesDAO();
 		Date updated = Calendar.getInstance().getTime();
 		c.setUpdated(updated);
 		if (cDAO.updateCompanie(c)) {
@@ -116,7 +109,7 @@ public class CompaniesEP {
 	public JWT loginCompany(@Named("email") String email, @Named("password") String password) throws Exception {
 		if (email != null && !email.equals("") && password != null && !password.equals("")) {
 
-			//cDAO = new CompaniesDAO();
+			// cDAO = new CompaniesDAO();
 			Companies companies = cDAO.getCompanyByEmail(email);
 			if (companies == null) {
 				throw new Exception("Email doesn't Exist.");
@@ -135,7 +128,7 @@ public class CompaniesEP {
 	@Transactional
 	@ApiMethod(name = "removeCompany", path = "remove/company/{email}", httpMethod = ApiMethod.HttpMethod.DELETE)
 	public Companies removeCompany(@Named("email") String email) throws NotFoundException {
-		//cDAO = new CompaniesDAO();
+		// cDAO = new CompaniesDAO();
 		Companies companies = cDAO.removeCompanie(email);
 		if (companies != null) {
 			return companies;
@@ -156,7 +149,7 @@ public class CompaniesEP {
 
 	@ApiMethod(name = "getCompanyByEmail", path = "companies/email/{email}", httpMethod = ApiMethod.HttpMethod.GET)
 	public Companies getCompanyByEmail(@Named("email") String email) throws NotFoundException {
-		//cDAO = new CompaniesDAO();
+		// cDAO = new CompaniesDAO();
 		Companies companies = cDAO.getCompanyByEmail(email);
 		if (companies != null) {
 			return companies;
@@ -167,7 +160,7 @@ public class CompaniesEP {
 
 	@ApiMethod(name = "getCompanyByName", path = "companies/name/{name}", httpMethod = ApiMethod.HttpMethod.GET)
 	public Companies getCompanyByName(@Named("name") String name) throws NotFoundException {
-		//cDAO = new CompaniesDAO();
+		// cDAO = new CompaniesDAO();
 		Companies companies = cDAO.getCompanieByName(name);
 		if (companies != null) {
 			return companies;
@@ -212,10 +205,7 @@ public class CompaniesEP {
 			Date created = getCurrentDate();
 			Auctions auction = new Auctions(id, name, type, size, mainColor, secundaryColor, description, time, price,
 					created);
-			companie.getAuctionsList().add(auction);
-			//auction.setCompaniesId(companie);
-			//aDAO = new AuctionsDAO();
-			if (aDAO.addAuctions(auction)) {
+			if (cDAO.addAuctions(auction, companie)) {
 				return auction;
 			} else {
 				throw new NotFoundException("Auction not added.");
@@ -301,7 +291,7 @@ public class CompaniesEP {
 		}
 
 		if (userEmail != null) {
-			//cDAO = new CompaniesDAO();
+			// cDAO = new CompaniesDAO();
 			user = cDAO.getCompanyByEmail(userEmail);
 
 			if (user == null) {

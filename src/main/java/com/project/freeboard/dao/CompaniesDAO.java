@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
+import com.project.freeboard.entity.Auctions;
 import com.project.freeboard.entity.Companies;
 import com.project.freeboard.service.PersistenceManager;
 
@@ -26,7 +27,7 @@ public class CompaniesDAO {
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception ex) {
-		
+
 			return false;
 		}
 	}
@@ -89,6 +90,22 @@ public class CompaniesDAO {
 			companie = null;
 		}
 		return companie;
+	}
+
+	public boolean addAuctions(Auctions auction, Companies companie) {
+		// TODO Auto-generated method stub
+		try {
+			auction.setCompaniesId(companie);
+			companie.getAuctionsList().add(auction);
+			em.getTransaction().begin();
+			em.persist(auction);
+			em.getTransaction().commit();
+			return true;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+
 	}
 
 }

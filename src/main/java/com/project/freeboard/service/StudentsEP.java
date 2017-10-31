@@ -10,11 +10,7 @@ import java.util.regex.Pattern;
 import javax.jdo.annotations.Transactional;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
-
-import com.google.api.server.spi.auth.EspAuthenticator;
 import com.google.api.server.spi.config.Api;
-import com.google.api.server.spi.config.ApiIssuer;
-import com.google.api.server.spi.config.ApiIssuerAudience;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
@@ -22,9 +18,7 @@ import com.google.api.server.spi.response.NotFoundException;
 import com.project.freeboard.dao.StudentsDAO;
 import com.project.freeboard.entity.Students;
 
-@Api(name = "students", version = "v1", authenticators = { EspAuthenticator.class }, issuers = {
-		@ApiIssuer(name = "firebase", issuer = "https://securetoken.google.com/cloud-computing-freeboard", jwksUri = "https://www.googleapis.com/service_accounts/v1/metadata/x509/securetoken@system.gserviceaccount.com") }, issuerAudiences = {
-				@ApiIssuerAudience(name = "firebase", audiences = "cloud-computing-freeboard") }, namespace = @ApiNamespace(ownerDomain = "service.freeboard.project.com", ownerName = "service.freeboard.project.com", packagePath = "/students"))
+@Api(name = "students", version = "v1", namespace = @ApiNamespace(ownerDomain = "service.freeboard.project.com", ownerName = "service.freeboard.project.com", packagePath = "/students"))
 public class StudentsEP {
 
 	private final static String EMAIL_PATTERN = "^[A-Za-z0-9+_.-]+@(.+)$";
@@ -135,7 +129,6 @@ public class StudentsEP {
 			address.validate();
 			return emailPattern.matcher(email).matches();
 		} catch (AddressException e) {
-			// TODO Auto-generated catch block
 			return false;
 		}
 
