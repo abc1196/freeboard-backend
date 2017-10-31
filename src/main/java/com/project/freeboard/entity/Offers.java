@@ -42,6 +42,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Offers implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    public final static String ACCEPTED="ACCEPTED";
+    public final static String DENIED="ACCEPTED";
+    public final static String PENDING="PENDING";
+    
     @Id
     @Basic(optional = false)
     @Column(nullable = false, length = 32)

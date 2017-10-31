@@ -1,6 +1,7 @@
 package com.project.freeboard.service;
 
 import java.util.ArrayList;
+import com.project.freeboard.util.Message;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.UUID;
 import java.util.regex.Pattern;
 
 import javax.jdo.annotations.Transactional;
+import javax.mail.Message;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.persistence.EntityManager;
@@ -19,10 +21,13 @@ import com.google.api.server.spi.config.Named;
 import com.google.api.server.spi.response.BadRequestException;
 import com.google.api.server.spi.response.NotFoundException;
 import com.google.api.server.spi.response.UnauthorizedException;
+import com.project.freeboard.dao.AuctionsDAO;
 import com.project.freeboard.dao.CompaniesDAO;
+import com.project.freeboard.dao.OffersDAO;
 import com.project.freeboard.dao.StudentsDAO;
 import com.project.freeboard.entity.Auctions;
 import com.project.freeboard.entity.Companies;
+import com.project.freeboard.entity.Offers;
 import com.project.freeboard.util.JWT;
 import com.project.freeboard.util.PersistenceManager;
 
@@ -45,6 +50,9 @@ public class CompaniesEP {
 	private CompaniesDAO cDAO = new CompaniesDAO(em);
 
 	private StudentsDAO sDAO = new StudentsDAO(em);
+	private AuctionsDAO aDAO = new AuctionsDAO(em);
+
+	private OffersDAO oDAO = new OffersDAO(em);
 
 	/**
 	 * API Company Entity
@@ -252,6 +260,110 @@ public class CompaniesEP {
 			}
 		}
 		return user;
+	}
+
+	@ApiMethod(name = "updateAuction", path = "updateAuction", httpMethod = ApiMethod.HttpMethod.PUT)
+	public Auctions updateAuction(Auctions a) throws NotFoundException {
+
+		if (aDAO.updateAuctions(a)) {
+			return a;
+		} else {
+			throw new NotFoundException("Auction doesn't exist.");
+		}
+	}
+
+	@Transactional
+	@ApiMethod(name = "removeAuction", path = "removeAuction/{id}", httpMethod = ApiMethod.HttpMethod.DELETE)
+	public Message removeAuction(@Named("jwt") String jwt, @Named("id") String id)
+			throws NotFoundException, UnauthorizedException {
+
+		if (jwt != null) {
+			getCurrentCompany(jwt);
+			if (aDAO.removeAuctions(id)) {
+				return new Message("Subasta eliminada");
+			} else {
+				throw new NotFoundException("Auction doesn't exist.");
+			}
+
+		} else {
+			throw new UnauthorizedException("Invalid access");
+		}
+	}
+
+	@ApiMethod(name = "getAllAuctions", path = "auctions", httpMethod = ApiMethod.HttpMethod.GET)
+	public List<Auctions> getAuctions() {
+
+		List<Auctions> auctions = aDAO.getAuctions();
+
+		return auctions;
+	}
+
+	@ApiMethod(name = "getAuctionById", path = "auctionsById/{id}", httpMethod = ApiMethod.HttpMethod.GET)
+	public Auctions getAuctionById(@Named("id") String id) throws NotFoundException {
+
+		Auctions auction = aDAO.getAuctionsById(id);
+		if (auction != null) {
+			return auction;
+		} else {
+			throw new NotFoundException("Auction doesn't exist.");
+		}
+	}
+
+	@ApiMethod(name = "getAuctionByType", path = "auctionsByType/{type}", httpMethod = ApiMethod.HttpMethod.GET)
+	public Auctions getAuctionByType(@Named("type") String type) throws NotFoundException {
+
+		Auctions auction = aDAO.getAuctionsById(type);
+		if (auction != null) {
+			return auction;
+		} else {
+			throw new NotFoundException("Auction doesn't exist.");
+		}
+	}
+
+	@ApiMethod(name = "getAuctionByTime", path = "auctionsByTime/{time}", httpMethod = ApiMethod.HttpMethod.GET)
+	public Auctions getAuctionByTime(@Named("id") String time) throws NotFoundException {
+
+		Auctions auction = aDAO.getAuctionsById(time);
+		if (auction != null) {
+			return auction;
+		} else {
+			throw new NotFoundException("Auction doesn't exist.");
+		}
+	}
+
+	@ApiMethod(name = "getAuctionByPrice", path = "auctionsByPrice/{price}", httpMethod = ApiMethod.HttpMethod.GET)
+	public Auctions getAuctionByPrice(@Named("price") String price) throws NotFoundException {
+		Auctions auction = aDAO.getAuctionsById(price);
+		if (auction != null) {
+			return auction;
+		} else {
+			throw new NotFoundException("Auction doesn't exist.");
+		}
+	}
+
+	@ApiMethod(name = "selectWinnerOffer", path = "auctionsWinnerOffer/", httpMethod = ApiMethod.HttpMethod.POST)
+	public Offers selectWinnerOffer(@Named("offerid") String offerid, @Named("auctionid") String auctionid) {
+
+		Offers winner = oDAO.getOffersById(offerid);
+		oDAO.getOffersById(offerid).setState(Offers.ACCEPTED);
+		aDAO.getAuctionsById(auctionid).setWinnerOffer(winner);
+
+		return winner;
+	}
+
+	@ApiMethod(name = "showOffers", path = "auctionsShowOffers/{auctionid}", httpMethod = ApiMethod.HttpMethod.GET)
+	public List<Offers> showOffers(@Named("auctionid") String auctionid) {
+
+		List<Offers> offersList = aDAO.getAuctionsById(auctionid).getOffersList();
+		return offersList;
+
+	}
+
+	@ApiMethod(name = "closeAuction", path = "auctionsClose/{auctionid}", httpMethod = ApiMethod.HttpMethod.GET)
+	public Offers closeAuction(@Named("auctionid") String auctionid) {
+		Offers winner = aDAO.getAuctionsById(auctionid).closeAuction();
+
+		return winner;
 	}
 
 }
