@@ -16,9 +16,11 @@ import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  *
- * @author nicolas1
+ * @author cloud
  */
 @Entity
 @Table(uniqueConstraints = {
@@ -38,15 +40,13 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Transactions.findByPayHash", query = "SELECT t FROM Transactions t WHERE t.payHash = :payHash")
     , @NamedQuery(name = "Transactions.findByStatePol", query = "SELECT t FROM Transactions t WHERE t.statePol = :statePol")
     , @NamedQuery(name = "Transactions.findByResponseCodePol", query = "SELECT t FROM Transactions t WHERE t.responseCodePol = :responseCodePol")
-    , @NamedQuery(name = "Transactions.findByResponseMessageCol", query = "SELECT t FROM Transactions t WHERE t.responseMessagePol = :responseMessageCol")
+    , @NamedQuery(name = "Transactions.findByResponseMessagePol", query = "SELECT t FROM Transactions t WHERE t.responseMessagePol = :responseMessagePol")
     , @NamedQuery(name = "Transactions.findByPaymentMethodType", query = "SELECT t FROM Transactions t WHERE t.paymentMethodType = :paymentMethodType")
     , @NamedQuery(name = "Transactions.findByTransactionDate", query = "SELECT t FROM Transactions t WHERE t.transactionDate = :transactionDate")
     , @NamedQuery(name = "Transactions.findByPaymentMethodName", query = "SELECT t FROM Transactions t WHERE t.paymentMethodName = :paymentMethodName")
     , @NamedQuery(name = "Transactions.findByTransactionscol", query = "SELECT t FROM Transactions t WHERE t.transactionscol = :transactionscol")
     , @NamedQuery(name = "Transactions.findByCreated", query = "SELECT t FROM Transactions t WHERE t.created = :created")
     , @NamedQuery(name = "Transactions.findByUpdated", query = "SELECT t FROM Transactions t WHERE t.updated = :updated")})
-
-
 public class Transactions implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -83,9 +83,9 @@ public class Transactions implements Serializable {
     private String payHash;
     @Column(name = "state_pol")
     private Integer statePol;
-    @Column(name = "response_code_pol", length = 255)
+    @Column(name = "response_code_pol")
     private Integer responseCodePol;
-    @Column(name = "response_message_Pol")
+    @Column(name = "response_message_pol", length = 255)
     private String responseMessagePol;
     @Column(name = "payment_method_type")
     private Integer paymentMethodType;
@@ -102,6 +102,8 @@ public class Transactions implements Serializable {
     private Date created;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updated;
+    
+    @JsonIgnore
     @JoinColumn(name = "offers_idoffers", referencedColumnName = "idoffers", nullable = false)
     @ManyToOne(optional = false)
     private Offers offersIdoffers;
@@ -113,7 +115,7 @@ public class Transactions implements Serializable {
         this.referenceCode = referenceCode;
     }
 
-    public Transactions(String referenceCode, String description, double amount, double tax, int taxReturnBase, String currency, String buyerFullName, String buyerEmail, String test, String responseURL, String confirmationURL, String payHash, Date created) {
+    public Transactions(String referenceCode, String description, double amount, double tax, int taxReturnBase, String currency, String buyerFullName, String buyerEmail, String test, String payHash, Date created) {
         this.referenceCode = referenceCode;
         this.description = description;
         this.amount = amount;
@@ -199,7 +201,6 @@ public class Transactions implements Serializable {
         this.test = test;
     }
 
-
     public String getPayHash() {
         return payHash;
     }
@@ -228,8 +229,8 @@ public class Transactions implements Serializable {
         return responseMessagePol;
     }
 
-    public void setResponseMessageCol(String responseMessageCol) {
-        this.responseMessagePol = responseMessageCol;
+    public void setResponseMessagePol(String responseMessagePol) {
+        this.responseMessagePol = responseMessagePol;
     }
 
     public Integer getPaymentMethodType() {
@@ -310,7 +311,7 @@ public class Transactions implements Serializable {
 
     @Override
     public String toString() {
-        return "beansexample.Transactions[ referenceCode=" + referenceCode + " ]";
+        return "com.project.freeboard.entity.Transactions[ referenceCode=" + referenceCode + " ]";
     }
     
 }

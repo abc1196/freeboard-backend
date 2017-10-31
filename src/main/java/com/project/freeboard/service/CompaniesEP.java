@@ -49,9 +49,9 @@ public class CompaniesEP {
 
 	private final static int PASSWORD_MIN_LENGTH = 8;
 
-	private CompaniesDAO cDAO;
+	private CompaniesDAO cDAO = new CompaniesDAO();
 
-	private AuctionsDAO aDAO;
+	private AuctionsDAO aDAO = new AuctionsDAO();
 
 	/**
 	 * API Company Entity
@@ -65,7 +65,7 @@ public class CompaniesEP {
 		if (email != null && !email.equals("") && name != null && !name.equals("") && phone != null && !phone.equals("")
 				&& address != null && !address.equals("") && password != null && !password.equals("")
 				&& contactPerson != null && !contactPerson.equals("")) {
-			cDAO = new CompaniesDAO();
+			//cDAO = new CompaniesDAO();
 			if (cDAO.getCompanyByEmail(email) != null) {
 				throw new BadRequestException("Email already in use.");
 			}
@@ -102,7 +102,7 @@ public class CompaniesEP {
 
 	@ApiMethod(name = "updateCompany", path = "update/company", httpMethod = ApiMethod.HttpMethod.PUT)
 	public Companies updateCompany(Companies c) throws NotFoundException {
-		cDAO = new CompaniesDAO();
+		//cDAO = new CompaniesDAO();
 		Date updated = Calendar.getInstance().getTime();
 		c.setUpdated(updated);
 		if (cDAO.updateCompanie(c)) {
@@ -116,7 +116,7 @@ public class CompaniesEP {
 	public JWT loginCompany(@Named("email") String email, @Named("password") String password) throws Exception {
 		if (email != null && !email.equals("") && password != null && !password.equals("")) {
 
-			cDAO = new CompaniesDAO();
+			//cDAO = new CompaniesDAO();
 			Companies companies = cDAO.getCompanyByEmail(email);
 			if (companies == null) {
 				throw new Exception("Email doesn't Exist.");
@@ -135,7 +135,7 @@ public class CompaniesEP {
 	@Transactional
 	@ApiMethod(name = "removeCompany", path = "remove/company/{email}", httpMethod = ApiMethod.HttpMethod.DELETE)
 	public Companies removeCompany(@Named("email") String email) throws NotFoundException {
-		cDAO = new CompaniesDAO();
+		//cDAO = new CompaniesDAO();
 		Companies companies = cDAO.removeCompanie(email);
 		if (companies != null) {
 			return companies;
@@ -156,7 +156,7 @@ public class CompaniesEP {
 
 	@ApiMethod(name = "getCompanyByEmail", path = "companies/email/{email}", httpMethod = ApiMethod.HttpMethod.GET)
 	public Companies getCompanyByEmail(@Named("email") String email) throws NotFoundException {
-		cDAO = new CompaniesDAO();
+		//cDAO = new CompaniesDAO();
 		Companies companies = cDAO.getCompanyByEmail(email);
 		if (companies != null) {
 			return companies;
@@ -167,7 +167,7 @@ public class CompaniesEP {
 
 	@ApiMethod(name = "getCompanyByName", path = "companies/name/{name}", httpMethod = ApiMethod.HttpMethod.GET)
 	public Companies getCompanyByName(@Named("name") String name) throws NotFoundException {
-		cDAO = new CompaniesDAO();
+		//cDAO = new CompaniesDAO();
 		Companies companies = cDAO.getCompanieByName(name);
 		if (companies != null) {
 			return companies;
@@ -212,9 +212,9 @@ public class CompaniesEP {
 			Date created = getCurrentDate();
 			Auctions auction = new Auctions(id, name, type, size, mainColor, secundaryColor, description, time, price,
 					created);
-			//companie.getAuctionsList().add(auction);
-			auction.setCompaniesId(companie);
-			aDAO = new AuctionsDAO();
+			companie.getAuctionsList().add(auction);
+			//auction.setCompaniesId(companie);
+			//aDAO = new AuctionsDAO();
 			if (aDAO.addAuctions(auction)) {
 				return auction;
 			} else {
@@ -301,7 +301,7 @@ public class CompaniesEP {
 		}
 
 		if (userEmail != null) {
-			cDAO = new CompaniesDAO();
+			//cDAO = new CompaniesDAO();
 			user = cDAO.getCompanyByEmail(userEmail);
 
 			if (user == null) {

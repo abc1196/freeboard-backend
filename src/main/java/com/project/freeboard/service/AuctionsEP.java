@@ -111,33 +111,33 @@ public class AuctionsEP {
 	}
 	
 	
-	@ApiMethod(name = "selectWinnerOffer", path = "auctionsWinnerOffer/", httpMethod = ApiMethod.HttpMethod.POST)
-	public Offers selectWinnerOffer(@Named("offerid") String offerid ,@Named("auctionid") String auctionid){
-		
-		aDAO = new AuctionsDAO();
-		oDAO=new OffersDAO();
-		Offers winner=oDAO.getOffersById(offerid);
-		aDAO.getAuctionsById(auctionid).setWinnerOffer(winner);	
-		oDAO.getOffersById(offerid).setState(Auctions.ACCEPTED);
-					
-		return winner;
-	}
-	@ApiMethod(name = "showOffers", path = "auctionsShowOffers/{auctionid}", httpMethod = ApiMethod.HttpMethod.GET)
-	public List<Offers> showOffers(@Named("auctionid") String auctionid){
-		
-		List<Offers> offersList=aDAO.getAuctionsById(auctionid).getOffersList();
-		return offersList;
-		
-	}
-	
-	@ApiMethod(name = "closeAuction", path = "auctionsClose/{auctionid}", httpMethod = ApiMethod.HttpMethod.GET)
-	public Offers closeAuction(@Named("auctionid") String auctionid){
-		
-		Offers winner=aDAO.getAuctionsById(auctionid).closeAuction();
-		
-		
-		return winner;
-	}
+//	@ApiMethod(name = "selectWinnerOffer", path = "auctionsWinnerOffer/", httpMethod = ApiMethod.HttpMethod.POST)
+//	public Offers selectWinnerOffer(@Named("offerid") String offerid ,@Named("auctionid") String auctionid){
+//		
+//		aDAO = new AuctionsDAO();
+//		oDAO=new OffersDAO();
+//		Offers winner=oDAO.getOffersById(offerid);
+//		aDAO.getAuctionsById(auctionid).setWinnerOffer(winner);	
+//		oDAO.getOffersById(offerid).setState(Auctions.ACCEPTED);
+//					
+//		return winner;
+//	}
+//	@ApiMethod(name = "showOffers", path = "auctionsShowOffers/{auctionid}", httpMethod = ApiMethod.HttpMethod.GET)
+//	public List<Offers> showOffers(@Named("auctionid") String auctionid){
+//		
+//		List<Offers> offersList=aDAO.getAuctionsById(auctionid).getOffersList();
+//		return offersList;
+//		
+//	}
+//	
+//	@ApiMethod(name = "closeAuction", path = "auctionsClose/{auctionid}", httpMethod = ApiMethod.HttpMethod.GET)
+//	public Offers closeAuction(@Named("auctionid") String auctionid){
+//		
+//		Offers winner=aDAO.getAuctionsById(auctionid).closeAuction();
+//		
+//		
+//		return winner;
+//	}
 	
 	
 	

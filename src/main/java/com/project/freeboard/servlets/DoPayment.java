@@ -16,9 +16,9 @@ import com.project.freeboard.entity.Offers;
 import com.project.freeboard.entity.Students;
 import com.project.freeboard.entity.Transactions;
 import com.project.freeboard.message.SendEmailMessage;
-import com.project.freeboard.service.CompaniesEP;
 import com.project.freeboard.service.OffersEP;
 import com.project.freeboard.service.TransactionsEP;
+import com.project.freeboard.service.CompaniesEP;
 import com.project.freeboard.service.Freeboard;
 
 //@WebServlet(
@@ -43,7 +43,6 @@ public class DoPayment extends HttpServlet {
 	private SendEmailMessage sem;
 	private OffersEP o;
 	private Freeboard freeboard;
-	private CompaniesEP epCompany;
 
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -69,13 +68,13 @@ public class DoPayment extends HttpServlet {
 		System.out.println("Amount: " + amount);
 		freeboard= new Freeboard();
 		
-		try {
-			Companies companies= epCompany.getCompanyByName(amount);
-			System.out.println(companies.getHash());
-		} catch (NotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Companies companies= epCompany.getCompanyByName(amount);
+//			System.out.println(companies.getHash());
+//		} catch (NotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		
 		t = new TransactionsEP();
@@ -378,7 +377,7 @@ public class DoPayment extends HttpServlet {
 
 		trans.setResponseCodePol(Integer.parseInt(response_code_pol));
 		trans.setStatePol(Integer.parseInt(state_pol));
-		trans.setResponseMessageCol(response_message_pol);
+	//	trans.setResponseMessageCol(response_message_pol);
 		trans.setPaymentMethodType(Integer.parseInt(payment_method_name));
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd.MMM.yyyy HH:mm:ss0");
