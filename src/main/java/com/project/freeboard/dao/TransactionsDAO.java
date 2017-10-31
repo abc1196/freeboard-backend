@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import com.project.freeboard.entity.Transactions;
-import com.project.freeboard.service.PersistenceManager;
+import com.project.freeboard.util.PersistenceManager;
 
 public class TransactionsDAO {
 	

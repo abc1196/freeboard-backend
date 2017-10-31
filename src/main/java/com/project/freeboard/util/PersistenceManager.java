@@ -1,4 +1,4 @@
-package com.project.freeboard.service;
+package com.project.freeboard.util;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -8,7 +8,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import com.project.freeboard.entity.Students;
-import com.project.freeboard.service.PersistenceManager;
+import com.project.freeboard.util.PersistenceManager;
 
 public class StudentsDAO {
 

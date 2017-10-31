@@ -19,7 +19,6 @@ import com.project.freeboard.message.SendEmailMessage;
 import com.project.freeboard.service.OffersEP;
 import com.project.freeboard.service.TransactionsEP;
 import com.project.freeboard.service.CompaniesEP;
-import com.project.freeboard.service.Freeboard;
 
 //@WebServlet(
 //	    name = "HelloAppEngine",
@@ -28,6 +27,7 @@ import com.project.freeboard.service.Freeboard;
 
 /**
  * Modulo para validar y registrar pagos
+ * 
  * @author Ricardo
  *
  */
@@ -42,7 +42,7 @@ public class DoPayment extends HttpServlet {
 	private TransactionsEP t;
 	private SendEmailMessage sem;
 	private OffersEP o;
-	private Freeboard freeboard;
+	private CompaniesEP epCompany;
 
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -64,24 +64,22 @@ public class DoPayment extends HttpServlet {
 		String payment_method_type = req.getParameter("payment_method_type");
 		String transaction_date = req.getParameter("transaction_date");
 		String payment_method_name = req.getParameter("payment_method_name");
-		
+
 		System.out.println("Amount: " + amount);
-		freeboard= new Freeboard();
-		
-//		try {
-//			Companies companies= epCompany.getCompanyByName(amount);
-//			System.out.println(companies.getHash());
-//		} catch (NotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
-		
+
+		try {
+			Companies companies = epCompany.getCompanyByName(amount);
+			System.out.println(companies.getHash());
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		t = new TransactionsEP();
 		o = new OffersEP();
 
 		try {
-			
+
 			// Valida si se trata de una operación real
 			boolean validatedPayment = validatedPayment(reference_code, pay_hash, test);
 
@@ -93,10 +91,10 @@ public class DoPayment extends HttpServlet {
 			boolean sendMessageToConfirmPayment = false;
 			boolean sendMessageToShareContactWithStudent = false;
 			boolean sendMessageToShareContactWithBusiness = false;
-			
+
 			if (validatedPayment) {
-				updated = updatedModel(reference_code, response_code_pol, state_pol, response_message_pol, payment_method_type,
-						transaction_date, payment_method_name);
+				updated = updatedModel(reference_code, response_code_pol, state_pol, response_message_pol,
+						payment_method_type, transaction_date, payment_method_name);
 			}
 
 			if (updated) {
@@ -105,13 +103,15 @@ public class DoPayment extends HttpServlet {
 
 			String studentEmail = consultStudentEmail(id_oferta);
 			String businessEmail = consultBusinessEmail(id_oferta);
-			
-			if (isTransactionApproved) {	
+
+			if (isTransactionApproved) {
 				sendMessageToConfirmPayment = sendMessageToConfirmPayment(id_oferta, businessEmail, amount, tax);
-				sendMessageToShareContactWithStudent = sendMessageToShareContactWithStudent(id_oferta, studentEmail, businessEmail);
-				sendMessageToShareContactWithBusiness = sendMessageToShareContactWithBusiness(id_oferta, businessEmail, studentEmail);
-			} else{
-				
+				sendMessageToShareContactWithStudent = sendMessageToShareContactWithStudent(id_oferta, studentEmail,
+						businessEmail);
+				sendMessageToShareContactWithBusiness = sendMessageToShareContactWithBusiness(id_oferta, businessEmail,
+						studentEmail);
+			} else {
+
 				isTransactionPending = isTransactionPending();
 			}
 
@@ -121,7 +121,8 @@ public class DoPayment extends HttpServlet {
 		}
 	}
 
-	private boolean sendMessageToConfirmPayment(String id_oferta, String businessEmail, String amount, String tax) throws NotFoundException {
+	private boolean sendMessageToConfirmPayment(String id_oferta, String businessEmail, String amount, String tax)
+			throws NotFoundException {
 		sem = new SendEmailMessage();
 		String companyName = consultCompanyName(id_oferta);
 		String companyMainContact = consultCompanyMainContact(id_oferta);
@@ -129,33 +130,32 @@ public class DoPayment extends HttpServlet {
 		String projectName = consultProjectName(id_oferta);
 		double subtotal = Double.parseDouble(amount) - Double.parseDouble(tax);
 
-		String subject = companyName +", tu pago ha sido confirmado";
-		
-		String message = "Estimado , "+ companyMainContact +" \n \n "
-				+ "Tu pago ha sido confirmado.  \n \n "
-				+ "PROYECTO: " + projectName +" \n \n "
-				+ "SUBTOTAL: " + subtotal +" \n "
-				+ "IVA: " + tax +" \n "
-				+ "TOTAL: " + amount +" \n \n "
-				+ "En pocos minutos recibirás un mensaje con la información del "+ STUDENT + " que ganó tu subasta."
-				+ "Muchas gracias por confiar en " + US;
+		String subject = companyName + ", tu pago ha sido confirmado";
+
+		String message = "Estimado , " + companyMainContact + " \n \n " + "Tu pago ha sido confirmado.  \n \n "
+				+ "PROYECTO: " + projectName + " \n \n " + "SUBTOTAL: " + subtotal + " \n " + "IVA: " + tax + " \n "
+				+ "TOTAL: " + amount + " \n \n " + "En pocos minutos recibirás un mensaje con la información del "
+				+ STUDENT + " que ganó tu subasta." + "Muchas gracias por confiar en " + US;
 
 		boolean messageToBusiness = sem.sendMessage(companyEmail, subject, message);
 
-		if( messageToBusiness )
+		if (messageToBusiness)
 			return true;
 		else
 			return false;
 	}
 
 	/**
-	 * Envía un mensaje de correo electrónico al estudiante para compartir la información de contacto de la empresa.
+	 * Envía un mensaje de correo electrónico al estudiante para compartir la
+	 * información de contacto de la empresa.
+	 * 
 	 * @param emailStudent
 	 * @param businessEmail
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
-	private boolean sendMessageToShareContactWithStudent(String id_oferta, String emailStudent, String businessEmail) throws NotFoundException {
+	private boolean sendMessageToShareContactWithStudent(String id_oferta, String emailStudent, String businessEmail)
+			throws NotFoundException {
 		sem = new SendEmailMessage();
 		String studentName = consultStudentName(id_oferta);
 		String companyName = consultCompanyName(id_oferta);
@@ -164,21 +164,18 @@ public class DoPayment extends HttpServlet {
 		String companyPhone = consultCompanyPhone(id_oferta);
 		String projectName = consultProjectName(id_oferta);
 
-		String subject = studentName +", tu oferta ha sido aprobada";
+		String subject = studentName + ", tu oferta ha sido aprobada";
 
-		String message = "Estimado/a "+ studentName +"\n \n"
-				+ "La empresa "+ companyName +" ha aceptado tu oferta. Es momento de iniciar a trabajar en el proyecto. \n \n"
+		String message = "Estimado/a " + studentName + "\n \n" + "La empresa " + companyName
+				+ " ha aceptado tu oferta. Es momento de iniciar a trabajar en el proyecto. \n \n"
 				+ "Puedes acceder a la información del proyecto desde tu panel de usuario. \n \n"
-				+ "Los datos de contacto de la empresa son los siguientes: \n \n"
-				+ "- NOMBRE EMPRESA: " + companyName + " \n \n"
-				+ "- PERSONA DE CONTACTO: " + companyMainContact + " \n \n"
-				+ "- EMAIL: " + companyEmail + "\n \n"
-				+ "- TELÉFONO: " + companyPhone + "\n \n"
-				+ "- NOMBRE PROYECTO: " + projectName + "\n \n";
+				+ "Los datos de contacto de la empresa son los siguientes: \n \n" + "- NOMBRE EMPRESA: " + companyName
+				+ " \n \n" + "- PERSONA DE CONTACTO: " + companyMainContact + " \n \n" + "- EMAIL: " + companyEmail
+				+ "\n \n" + "- TELÉFONO: " + companyPhone + "\n \n" + "- NOMBRE PROYECTO: " + projectName + "\n \n";
 
 		boolean messageToStudent = sem.sendMessage(emailStudent, subject, message);
 
-		if( messageToStudent )
+		if (messageToStudent)
 			return true;
 		else
 			return false;
@@ -186,11 +183,13 @@ public class DoPayment extends HttpServlet {
 
 	/**
 	 * Envía un mensaje a la empresa con los datos de contacto del estudiante
+	 * 
 	 * @param emailBusiness
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
-	private boolean sendMessageToShareContactWithBusiness(String id_oferta, String businessEmail, String emailStudent) throws NotFoundException {
+	private boolean sendMessageToShareContactWithBusiness(String id_oferta, String businessEmail, String emailStudent)
+			throws NotFoundException {
 
 		sem = new SendEmailMessage();
 		String studentName = consultStudentName(id_oferta);
@@ -201,20 +200,18 @@ public class DoPayment extends HttpServlet {
 		String companyEmail = businessEmail;
 		String projectName = consultProjectName(id_oferta);
 
-		String subject = companyName +", "+studentName +" va a realizar tu proyecto " +"\"" + projectName + "\"";
-		
-		String message = "Estimado , "+ companyMainContact +" \n \n "
-				+ "El freeboarder, "+ studentName +" , está dispuesto a realizar tu proyecto de "+ companyName +", \"" + projectName + "\"" +" \n \n "
+		String subject = companyName + ", " + studentName + " va a realizar tu proyecto " + "\"" + projectName + "\"";
+
+		String message = "Estimado , " + companyMainContact + " \n \n " + "El freeboarder, " + studentName
+				+ " , está dispuesto a realizar tu proyecto de " + companyName + ", \"" + projectName + "\"" + " \n \n "
 				+ "Es importante que te comuniques con él, para acordar detalles, formas y tiempos de entrega. \n \n "
-				+ "Los datos de contacto del freeboarder son los siguientes: \n \n "
-				+ "NOMBRE: " + studentName + " " + studentLast + "\n \n"
-				+ "EMAIL: " + emailStudent + "\n \n"
-				+ "TELÉFONO: " + studentPhone + "\n \n"
+				+ "Los datos de contacto del freeboarder son los siguientes: \n \n " + "NOMBRE: " + studentName + " "
+				+ studentLast + "\n \n" + "EMAIL: " + emailStudent + "\n \n" + "TELÉFONO: " + studentPhone + "\n \n"
 				+ "NOMBRE DEL PROYECTO: " + projectName;
 
 		boolean messageToBusiness = sem.sendMessage(companyEmail, subject, message);
 
-		if( messageToBusiness )
+		if (messageToBusiness)
 			return true;
 		else
 			return false;
@@ -222,8 +219,9 @@ public class DoPayment extends HttpServlet {
 
 	/**
 	 * Consulta en la base de datos el email de la empresa
+	 * 
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
 	private String consultBusinessEmail(String id_oferta) throws NotFoundException {
 		Auctions auction = o.getAuctionsIdauctions(id_oferta);
@@ -234,9 +232,10 @@ public class DoPayment extends HttpServlet {
 
 	/**
 	 * Consulta en la base de datos el email del estudiante
-	 * @param reference_code 
+	 * 
+	 * @param reference_code
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
 	private String consultStudentEmail(String id_oferta) throws NotFoundException {
 		Students student = o.getStudentId(id_oferta);
@@ -245,8 +244,9 @@ public class DoPayment extends HttpServlet {
 
 	/**
 	 * Consulta en la base de datos el nombre de la subasta
+	 * 
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
 	private String consultProjectName(String id_oferta) throws NotFoundException {
 		Auctions auctions = o.getAuctionsIdauctions(id_oferta);
@@ -255,17 +255,20 @@ public class DoPayment extends HttpServlet {
 
 	/**
 	 * Consulta en la base de datos el número telefónico de la compañía
+	 * 
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
 	private String consultCompanyPhone(String id_oferta) throws NotFoundException {
 		return o.getAuctionsIdauctions(id_oferta).getCompaniesId().getPhone();
 	}
 
 	/**
-	 * Consulta en la base de datos el nombre de la persona de contacto de la compañía
+	 * Consulta en la base de datos el nombre de la persona de contacto de la
+	 * compañía
+	 * 
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
 	private String consultCompanyMainContact(String id_oferta) throws NotFoundException {
 		return o.getAuctionsIdauctions(id_oferta).getCompaniesId().getContactPerson();
@@ -273,8 +276,9 @@ public class DoPayment extends HttpServlet {
 
 	/**
 	 * Consulta en la base de datos el nombre de la compañía
+	 * 
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
 	private String consultCompanyName(String id_oferta) throws NotFoundException {
 		return o.getAuctionsIdauctions(id_oferta).getCompaniesId().getName();
@@ -282,25 +286,28 @@ public class DoPayment extends HttpServlet {
 
 	/**
 	 * Consulta en la base de datos el nombre del estudiante
+	 * 
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
 	private String consultStudentName(String id_oferta) throws NotFoundException {
 		return o.getStudentId(id_oferta).getName();
 	}
-	
+
 	/**
 	 * Consulta en la base de datos el apellido del estudiante
+	 * 
 	 * @param id_oferta
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
 	private String consultStudentLast(String id_oferta) throws NotFoundException {
 		return o.getStudentId(id_oferta).getLastname();
 	}
-	
+
 	/**
 	 * Consulta en la base de datos el número telefónico del estudiante
+	 * 
 	 * @param id_oferta
 	 * @return
 	 * @throws NotFoundException
@@ -310,7 +317,9 @@ public class DoPayment extends HttpServlet {
 	}
 
 	/**
-	 * Verifica si la transacción realizada por la empresa fue aprobada desde el gateway de pagos
+	 * Verifica si la transacción realizada por la empresa fue aprobada desde el
+	 * gateway de pagos
+	 * 
 	 * @param state_pol
 	 * @param response_code_pol
 	 * @param response_message_pol
@@ -325,9 +334,10 @@ public class DoPayment extends HttpServlet {
 		else
 			return false;
 	}
-	
+
 	/**
 	 * Verifica si la transacción realizada por la empresa está pendiente
+	 * 
 	 * @return
 	 */
 	private boolean isTransactionPending() {
@@ -336,7 +346,9 @@ public class DoPayment extends HttpServlet {
 	}
 
 	/**
-	 * Consulta cuál es el estado o respuesta del gateway de pagos de una trasacción realizada por la empresa
+	 * Consulta cuál es el estado o respuesta del gateway de pagos de una
+	 * trasacción realizada por la empresa
+	 * 
 	 * @return
 	 */
 	private String checkTransactionStatus() {
@@ -345,10 +357,11 @@ public class DoPayment extends HttpServlet {
 
 	/**
 	 * Utiliza el hash para verificar si una trasacción es válida.
+	 * 
 	 * @param pay_hash
 	 * @param test
 	 * @return
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
 	private boolean validatedPayment(String reference_code, String pay_hash, String test) throws NotFoundException {
 
@@ -359,7 +372,9 @@ public class DoPayment extends HttpServlet {
 	}
 
 	/**
-	 * Actualiza la tabla Transactions de la base de datos con la información que recibe desde el gateway de pagos
+	 * Actualiza la tabla Transactions de la base de datos con la información
+	 * que recibe desde el gateway de pagos
+	 * 
 	 * @param response_code_pol
 	 * @param state_pol
 	 * @param response_message_pol
@@ -368,16 +383,17 @@ public class DoPayment extends HttpServlet {
 	 * @param payment_method_name
 	 * @return
 	 * @throws ParseException
-	 * @throws NotFoundException 
+	 * @throws NotFoundException
 	 */
-	private boolean updatedModel(String reference_code, String response_code_pol, String state_pol, String response_message_pol,
-			String payment_method_type, String transaction_date, String payment_method_name) throws ParseException, NotFoundException {
-		
+	private boolean updatedModel(String reference_code, String response_code_pol, String state_pol,
+			String response_message_pol, String payment_method_type, String transaction_date,
+			String payment_method_name) throws ParseException, NotFoundException {
+
 		Transactions trans = t.getTransactionById(reference_code);
 
 		trans.setResponseCodePol(Integer.parseInt(response_code_pol));
 		trans.setStatePol(Integer.parseInt(state_pol));
-	//	trans.setResponseMessageCol(response_message_pol);
+		// trans.setResponseMessageCol(response_message_pol);
 		trans.setPaymentMethodType(Integer.parseInt(payment_method_name));
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd.MMM.yyyy HH:mm:ss0");

@@ -1,15 +1,12 @@
 package com.project.freeboard.service;
 
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-import javax.crypto.spec.SecretKeySpec;
 import javax.jdo.annotations.Transactional;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -21,16 +18,14 @@ import com.google.api.server.spi.config.Named;
 import com.google.api.server.spi.response.BadRequestException;
 import com.google.api.server.spi.response.NotFoundException;
 import com.google.api.server.spi.response.UnauthorizedException;
-import com.project.freeboard.dao.AuctionsDAO;
 import com.project.freeboard.dao.CompaniesDAO;
 import com.project.freeboard.entity.Auctions;
 import com.project.freeboard.entity.Companies;
+import com.project.freeboard.util.JWT;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 
 @Api(name = "companies", version = "v1", namespace = @ApiNamespace(ownerDomain = "service.freeboard.project.com", ownerName = "service.freeboard.project.com", packagePath = "/companies"))
@@ -44,8 +39,6 @@ public class CompaniesEP {
 
 	private CompaniesDAO cDAO = new CompaniesDAO();
 
-	private AuctionsDAO aDAO = new AuctionsDAO();
-
 	/**
 	 * API Company Entity
 	 * 
@@ -58,7 +51,7 @@ public class CompaniesEP {
 		if (email != null && !email.equals("") && name != null && !name.equals("") && phone != null && !phone.equals("")
 				&& address != null && !address.equals("") && password != null && !password.equals("")
 				&& contactPerson != null && !contactPerson.equals("")) {
-			// cDAO = new CompaniesDAO();
+
 			if (cDAO.getCompanyByEmail(email) != null) {
 				throw new BadRequestException("Email already in use.");
 			}
@@ -114,7 +107,7 @@ public class CompaniesEP {
 			if (companies == null) {
 				throw new Exception("Email doesn't Exist.");
 			} else if (companies.getPassword().equals(password)) {
-				return new JWT(generateToken(companies));
+				return new JWT(JWT.generateToken(companies));
 			} else {
 				throw new BadRequestException("Password Incorrect.");
 			}
@@ -199,7 +192,7 @@ public class CompaniesEP {
 
 		if (jwt != null) {
 
-			Companies companie = getCurrentUser(jwt);
+			Companies companie = getCurrentCompany(jwt);
 
 			String id = createHash();
 			Date created = getCurrentDate();
@@ -225,51 +218,6 @@ public class CompaniesEP {
 		return password.length() >= PASSWORD_MIN_LENGTH;
 	}
 
-	public class JWT {
-		private String jwt;
-
-		public JWT(String value) {
-			this.jwt = value;
-		}
-
-		public String getValue() {
-			return jwt;
-		}
-
-		public void setValue(String value) {
-			this.jwt = value;
-		}
-
-	}
-
-	public static final SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS256;
-
-	public static final byte[] SECRET = "agskgHh2971pA_SaLSDOAaÑSaS[A*sdañSDs:aSX:as!!!;asMAS?MXA:SD=AÑS)JLQ)LS)AJS)AS=Gq=="
-			.getBytes();
-	public static final Key SIGNING_KEY = new SecretKeySpec(SECRET, SIGNATURE_ALGORITHM.getJcaName());
-
-	/**
-	 * * Generate the access token and its expiration date in order to be used
-	 * within * 10 minutes based on the system's current date time * * @param
-	 * user * The user who will be configured with his access properties
-	 */
-	private String generateToken(Companies companies) {
-		JwtBuilder builder = Jwts.builder().setId(companies.getEmail())
-				.setIssuedAt(GregorianCalendar.getInstance().getTime()).setExpiration(generateTokenExpiration())
-				.signWith(SIGNATURE_ALGORITHM, SIGNING_KEY);
-		return builder.compact();
-	}
-
-	/**
-	 * * Generate an expiration date adding 10 minutes to the system's current
-	 * date * time * * @return The expiration date
-	 */
-	private static Date generateTokenExpiration() {
-		GregorianCalendar calendar = (GregorianCalendar) GregorianCalendar.getInstance();
-		calendar.add(Calendar.HOUR, 24);
-		return calendar.getTime();
-	}
-
 	/**
 	 * * Allows retrieve the name, lastname and email of the logged user *
 	 * <p>
@@ -277,12 +225,11 @@ public class CompaniesEP {
 	 * information * @throws UnauthorizedException * If the token isn't valid If
 	 * the token is expired
 	 */
-	@ApiMethod(name = "getCurrentUser", path = "getCurrentUser", httpMethod = ApiMethod.HttpMethod.GET)
-	public Companies getCurrentUser(@Named("jwt") String token) throws UnauthorizedException {
+	public Companies getCurrentCompany(String token) throws UnauthorizedException {
 		String userEmail = null;
 		Companies user = null;
 		try {
-			Claims claims = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token).getBody();
+			Claims claims = Jwts.parser().setSigningKey(JWT.SECRET).parseClaimsJws(token).getBody();
 			userEmail = claims.getId();
 		} catch (SignatureException e) {
 			throw new UnauthorizedException("Invalid token");
@@ -291,7 +238,7 @@ public class CompaniesEP {
 		}
 
 		if (userEmail != null) {
-			// cDAO = new CompaniesDAO();
+
 			user = cDAO.getCompanyByEmail(userEmail);
 
 			if (user == null) {
