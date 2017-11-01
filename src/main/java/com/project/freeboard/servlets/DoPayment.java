@@ -9,19 +9,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.google.api.server.spi.response.NotFoundException;
-import com.project.freeboard.entity.Companies;
 import com.project.freeboard.entity.Transactions;
 import com.project.freeboard.message.SendEmailMessage;
-import com.project.freeboard.service.StudentsEP;
-import com.project.freeboard.service.TransactionsEP;
 import com.project.freeboard.service.CompaniesEP;
-
-//@WebServlet(
-//	    name = "HelloAppEngine",
-//	    urlPatterns = {"/hello"}
-//	)
 
 /**
  * Modulo para validar y registrar pagos
@@ -37,7 +28,6 @@ public class DoPayment extends HttpServlet {
 	public final static String STUDENT = "freeboarder";
 	public final static String US = "Freeboard";
 
-
 	private SendEmailMessage sem;
 	private CompaniesEP epCompany;
 
@@ -45,7 +35,6 @@ public class DoPayment extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String reference_code = req.getParameter("reference_sale"); // idTransaccion
-		String description = req.getParameter("description");
 		String amount = req.getParameter("value"); // value en la respuesta
 		String tax = req.getParameter("tax");
 		String tax_return_base = req.getParameter("tax_return_base");
@@ -63,18 +52,17 @@ public class DoPayment extends HttpServlet {
 		String payment_method_name = req.getParameter("payment_method_name");
 
 		System.out.println("Amount: " + amount);
-		
-		epCompany = new CompaniesEP();
-		
-		try {
-			Companies companies = epCompany.getCompanyByName(amount);
-			System.out.println(companies.getHash());
-		} catch (NotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		System.out.println("Codigo de referencia: " + reference_code);
 
-		
+		epCompany = new CompaniesEP();
+
+		// try {
+		// Companies companies = epCompany.getCompanyByName(amount);
+		// System.out.println(companies.getHash());
+		// } catch (NotFoundException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
 
 		try {
 
@@ -106,8 +94,8 @@ public class DoPayment extends HttpServlet {
 				sendMessageToConfirmPayment = sendMessageToConfirmPayment(id_auctions, businessEmail, amount, tax);
 				sendMessageToShareContactWithStudent = sendMessageToShareContactWithStudent(id_auctions, studentEmail,
 						businessEmail);
-				sendMessageToShareContactWithBusiness = sendMessageToShareContactWithBusiness(id_auctions, businessEmail,
-						studentEmail);
+				sendMessageToShareContactWithBusiness = sendMessageToShareContactWithBusiness(id_auctions,
+						businessEmail, studentEmail);
 			} else {
 
 				isTransactionPending = isTransactionPending();
@@ -222,7 +210,7 @@ public class DoPayment extends HttpServlet {
 	 * @throws NotFoundException
 	 */
 	private String consultBusinessEmail(String id_auction) throws NotFoundException {
-		
+
 		return epCompany.getAuctionById(id_auction).getCompaniesId().getEmail();
 	}
 
@@ -274,7 +262,7 @@ public class DoPayment extends HttpServlet {
 	 * @return
 	 * @throws NotFoundException
 	 */
-	private String consultCompanyName( String id_auction ) throws NotFoundException {
+	private String consultCompanyName(String id_auction) throws NotFoundException {
 		return epCompany.getAuctionById(id_auction).getCompaniesId().getName();
 	}
 
@@ -357,14 +345,15 @@ public class DoPayment extends HttpServlet {
 	 * @return
 	 * @throws NotFoundException
 	 */
-	private boolean validatedPayment(String id_auction, String reference_code, String pay_hash, String test) throws NotFoundException {
+	private boolean validatedPayment(String id_auction, String reference_code, String pay_hash, String test)
+			throws NotFoundException {
 
 		Transactions t = searchTransaction(id_auction, reference_code);
-		
+
 		String payHash = "";
-		
-		if( t != null )
-			payHash  = t.getPayHash();
+
+		if (t != null)
+			payHash = t.getPayHash();
 		else
 			return false;
 
@@ -391,7 +380,7 @@ public class DoPayment extends HttpServlet {
 			String payment_method_name) throws ParseException, NotFoundException {
 
 		Transactions trans = searchTransaction(id_auction, reference_code);
-		
+
 		trans.setResponseCodePol(Integer.parseInt(response_code_pol));
 		trans.setStatePol(Integer.parseInt(state_pol));
 		// trans.setResponseMessageCol(response_message_pol);
@@ -404,28 +393,32 @@ public class DoPayment extends HttpServlet {
 
 		return true;
 	}
-	
+
 	/**
 	 * Busca una trasacción de una lista
+	 * 
 	 * @param id_auction
 	 * @param reference_code
 	 * @return
 	 * @throws NotFoundException
 	 */
-	private Transactions searchTransaction(String id_auction, String reference_code) throws NotFoundException{
-		List<Transactions> transactionList = epCompany.getAuctionById(id_auction).getWinnerOffer().getTransactionsList();
+	private Transactions searchTransaction(String id_auction, String reference_code) throws NotFoundException {
+		List<Transactions> transactionList = epCompany.getAuctionById(id_auction).getWinnerOffer()
+				.getTransactionsList();
 		Transactions trans = null;
-		
-		for(int i=0; i<transactionList.size(); i++){
+
+		for (int i = 0; i < transactionList.size(); i++) {
 			trans = transactionList.get(i);
-			
-			if(trans.getReferenceCode().equals(reference_code)){
+
+			if (trans.getReferenceCode().equals(reference_code)) {
 				return transactionList.get(i);
 			}
 		}
-		
+
 		return trans;
 	}
+	
+}
 
 	// Se actualiza el modelo
 	// Si el estado es aprobado, entonces sigue lo que sucede si es aprobado
@@ -577,5 +570,3 @@ public class DoPayment extends HttpServlet {
 	// });
 	//
 	// }
-
-}
