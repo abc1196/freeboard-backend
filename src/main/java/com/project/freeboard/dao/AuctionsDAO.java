@@ -8,7 +8,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import com.project.freeboard.entity.Auctions;
-import com.project.freeboard.util.PersistenceManager;
+import com.project.freeboard.entity.Companies;
 
 public class AuctionsDAO {
 
@@ -114,6 +114,19 @@ public class AuctionsDAO {
 		}
 
 		return auctions;
+	}
+
+	public List<Auctions> getAuctionsByCompany(Companies companie) {
+		// TODO Auto-generated method stub
+		List<Auctions> Auctions = null;
+		TypedQuery<Auctions> q = em.createNamedQuery("Auctions.getOffersByCompany", Auctions.class);
+		q.setParameter("companiesId", companie);
+		try {
+			Auctions = q.getResultList();
+		} catch (NoResultException e) {
+			Auctions = new ArrayList<Auctions>();
+		}
+		return Auctions;
 	}
 
 }

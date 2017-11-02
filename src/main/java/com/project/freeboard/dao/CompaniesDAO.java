@@ -9,7 +9,7 @@ import javax.persistence.TypedQuery;
 
 import com.project.freeboard.entity.Auctions;
 import com.project.freeboard.entity.Companies;
-import com.project.freeboard.util.PersistenceManager;
+
 
 public class CompaniesDAO {
 

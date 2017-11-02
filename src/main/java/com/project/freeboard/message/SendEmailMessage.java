@@ -15,8 +15,6 @@ public class SendEmailMessage {
 
 	private final Properties properties = new Properties();
 
-	private String password;
-
 	private Session session;
 
 	public SendEmailMessage() {

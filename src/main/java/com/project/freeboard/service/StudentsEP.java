@@ -35,6 +35,10 @@ import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureException;
 
+/**
+ * @author alejo
+ *
+ */
 @Api(name = "students", version = "v1", namespace = @ApiNamespace(ownerDomain = "service.freeboard.project.com", ownerName = "service.freeboard.project.com", packagePath = "/students"))
 public class StudentsEP {
 
@@ -56,6 +60,24 @@ public class StudentsEP {
 
 	private OffersDAO oDAO = new OffersDAO(em);
 
+	/**
+	 * signUpStudent
+	 * 
+	 * @param email
+	 * @param name
+	 * @param lastname
+	 * @param phone
+	 * @param bankWire
+	 * @param bank
+	 * @param accountType
+	 * @param university
+	 * @param career
+	 * @param accountOwner
+	 * @param password
+	 * @return
+	 * @throws NotFoundException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "signUpStudent", path = "signup/student", httpMethod = ApiMethod.HttpMethod.POST)
 	public Students signUpStudent(@Named("email") String email, @Named("name") String name,
 			@Named("lastname") String lastname, @Named("phone") String phone, @Named("bankWire") String bankWire,
@@ -101,6 +123,16 @@ public class StudentsEP {
 		}
 	}
 
+	/**
+	 * loginStudent
+	 * 
+	 * @param email
+	 * @param password
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "loginStudent", path = "login/student", httpMethod = ApiMethod.HttpMethod.POST)
 	public JWT loginStudent(@Named("email") String email, @Named("password") String password)
 			throws NotFoundException, UnauthorizedException, BadRequestException {
@@ -121,6 +153,15 @@ public class StudentsEP {
 
 	}
 
+	/**
+	 * updateStudent
+	 * 
+	 * @param jwt
+	 * @param s
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 */
 	@ApiMethod(name = "updateStudent", path = "update/student", httpMethod = ApiMethod.HttpMethod.PUT)
 	public Students updateStudent(@Named("jwt") String jwt, Students s)
 			throws NotFoundException, UnauthorizedException {
@@ -137,8 +178,18 @@ public class StudentsEP {
 		}
 	}
 
+	/**
+	 * getStudentProfile
+	 * 
+	 * @param jwt
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "getStudentProfile", path = "getStudentByEmail", httpMethod = ApiMethod.HttpMethod.GET)
-	public Students getStudentProfile(@Named("jwt") String jwt) throws NotFoundException, UnauthorizedException {
+	public Students getStudentProfile(@Named("jwt") String jwt)
+			throws NotFoundException, UnauthorizedException, BadRequestException {
 		if (jwt != null) {
 			Students students = getCurrentStudent(jwt);
 			if (students != null) {
@@ -147,16 +198,31 @@ public class StudentsEP {
 				throw new NotFoundException("Student doesn't exist.");
 			}
 		} else {
-			throw new UnauthorizedException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 	}
 
+	/**
+	 * addOffers
+	 * 
+	 * @param jwt
+	 * @param idAuction
+	 * @param price
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "addOffers", path = "offers/{idAuction}", httpMethod = ApiMethod.HttpMethod.POST)
 	public Offers addOffers(@Named("jwt") String jwt, @Named("idAuction") String idAuction,
-			@Named("price") String price) throws NotFoundException, UnauthorizedException {
+			@Named("price") String price) throws NotFoundException, UnauthorizedException, BadRequestException {
 
-		if (jwt != null) {
-
+		if (jwt != null && idAuction != null && price != null) {
+			try {
+				Double.parseDouble(price);
+			} catch (NumberFormatException ne) {
+				throw new BadRequestException("invalid price");
+			}
 			Students students = getCurrentStudent(jwt);
 			String idoffers = createHash();
 			Date created = getCurrentDate();
@@ -174,13 +240,24 @@ public class StudentsEP {
 				throw new NotFoundException("Offers no se pudo agregar.");
 			}
 		} else {
-			throw new UnauthorizedException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 
 	}
 
+	/**
+	 * updateOffers
+	 * 
+	 * @param jwt
+	 * @param e
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "updateOffers", path = "offers", httpMethod = ApiMethod.HttpMethod.PUT)
-	public Offers updateOffers(@Named("jwt") String jwt, Offers e) throws NotFoundException, UnauthorizedException {
+	public Offers updateOffers(@Named("jwt") String jwt, Offers e)
+			throws NotFoundException, UnauthorizedException, BadRequestException {
 		if (jwt != null) {
 
 			getCurrentStudent(jwt);
@@ -192,16 +269,27 @@ public class StudentsEP {
 				throw new NotFoundException("Offer no existe.");
 			}
 		} else {
-			throw new UnauthorizedException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 	}
 
+	/**
+	 * removeOffers
+	 * 
+	 * @param jwt
+	 * @param idAuction
+	 * @param id
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@Transactional
 	@ApiMethod(name = "removeOffers", path = "offers/{idoffer}", httpMethod = ApiMethod.HttpMethod.DELETE)
-	public Message removeOffers(@Named("jwt") String jwt, @Named("idAuction") String idAuction, @Named("idoffer") String id)
-			throws NotFoundException, UnauthorizedException {
+	public Message removeOffers(@Named("jwt") String jwt, @Named("idAuction") String idAuction,
+			@Named("idoffer") String id) throws NotFoundException, UnauthorizedException, BadRequestException {
 
-		if (jwt != null) {
+		if (jwt != null && idAuction != null && id != null) {
 
 			getCurrentStudent(jwt);
 
@@ -211,12 +299,21 @@ public class StudentsEP {
 				throw new NotFoundException("Offer no existe.");
 			}
 		} else {
-			throw new UnauthorizedException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 	}
 
+	/**
+	 * getAllOffersByStudent
+	 * 
+	 * @param jwt
+	 * @return
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "getAllOffersByStudent", path = "offers", httpMethod = ApiMethod.HttpMethod.GET)
-	public List<Offers> getAllOffersByStudent(@Named("jwt") String jwt) throws UnauthorizedException {
+	public List<Offers> getAllOffersByStudent(@Named("jwt") String jwt)
+			throws UnauthorizedException, BadRequestException {
 
 		if (jwt != null) {
 
@@ -224,14 +321,24 @@ public class StudentsEP {
 			List<Offers> myOffers = oDAO.getOfferssByStudent(student);
 			return myOffers;
 		} else {
-			throw new UnauthorizedException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 	}
 
+	/**
+	 * getOffersById
+	 * 
+	 * @param jwt
+	 * @param id
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "getOffersById", path = "offers/{id}", httpMethod = ApiMethod.HttpMethod.GET)
 	public Offers getOffersById(@Named("jwt") String jwt, @Named("id") String id)
-			throws NotFoundException, UnauthorizedException {
-		if (jwt != null) {
+			throws NotFoundException, UnauthorizedException, BadRequestException {
+		if (jwt != null && id != null) {
 
 			getCurrentStudent(jwt);
 			Offers Offers = oDAO.getOffersById(id);
@@ -241,29 +348,25 @@ public class StudentsEP {
 				throw new NotFoundException("Offer no existe.");
 			}
 		} else {
-			throw new UnauthorizedException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 	}
 
-	// @ApiMethod(name = "getStudentId", path = "offers/student/{offerid}",
-	// httpMethod = ApiMethod.HttpMethod.GET)
-	// public Students getStudentId(@Named("offerid") String id) throws
-	// NotFoundException {
-	//
-	// Offers offer = getOffersById(id);
-	// if (offer != null) {
-	// Students student = offer.getStudentsId();
-	// return student;
-	// } else {
-	// throw new NotFoundException("Offer no existe");
-	// }
-	// }
-
+	/**
+	 * getAuctionId
+	 * 
+	 * @param jwt
+	 * @param id
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "getAuctionId", path = "offers/auction/{offerid}", httpMethod = ApiMethod.HttpMethod.GET)
 	public Auctions getAuctionsIdauctions(@Named("jwt") String jwt, @Named("offerid") String id)
-			throws NotFoundException, UnauthorizedException {
+			throws NotFoundException, UnauthorizedException, BadRequestException {
 
-		if (jwt != null) {
+		if (jwt != null && id != null) {
 			getCurrentStudent(jwt);
 			Offers offer = oDAO.getOffersById(id);
 			if (offer != null) {
@@ -273,15 +376,25 @@ public class StudentsEP {
 				throw new NotFoundException("Oferta no existe");
 			}
 		} else {
-			throw new NotFoundException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 	}
 
+	/**
+	 * getCompanyAuction
+	 * 
+	 * @param jwt
+	 * @param id
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "getCompanyAuction", path = "offers/auction/company", httpMethod = ApiMethod.HttpMethod.GET)
 	public Companies getCompanyAuction(@Named("jwt") String jwt, @Named("offerid") String id)
-			throws NotFoundException, UnauthorizedException {
+			throws NotFoundException, UnauthorizedException, BadRequestException {
 
-		if (jwt != null) {
+		if (jwt != null && id != null) {
 			getCurrentStudent(jwt);
 			Offers offer = oDAO.getOffersById(id);
 			if (offer != null) {
@@ -292,77 +405,130 @@ public class StudentsEP {
 				throw new NotFoundException("Oferta no existe");
 			}
 		} else {
-			throw new NotFoundException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 	}
 
+	/**
+	 * getAllAuctions
+	 * 
+	 * @param jwt
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "getAllAuctions", path = "auctions", httpMethod = ApiMethod.HttpMethod.GET)
-	public List<Auctions> getAuctions(@Named("jwt") String jwt) throws NotFoundException, UnauthorizedException {
+	public List<Auctions> getAuctions(@Named("jwt") String jwt)
+			throws NotFoundException, UnauthorizedException, BadRequestException {
 
 		if (jwt != null) {
 			getCurrentStudent(jwt);
 			List<Auctions> auctions = aDAO.getAuctions();
 			return auctions;
 		} else {
-			throw new NotFoundException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 
 	}
 
+	/**
+	 * getAllAuctionsByType
+	 * 
+	 * @param jwt
+	 * @param type
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "getAllAuctionsByType", path = "auctionstype", httpMethod = ApiMethod.HttpMethod.GET)
 	public List<Auctions> getAllAuctionsByType(@Named("jwt") String jwt, @Named("type") String type)
-			throws NotFoundException, UnauthorizedException {
+			throws NotFoundException, UnauthorizedException, BadRequestException {
 
 		if (jwt != null) {
 			getCurrentStudent(jwt);
 			List<Auctions> auctions = aDAO.getAuctionsByType(type);
 			return auctions;
 		} else {
-			throw new NotFoundException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 
 	}
 
+	/**
+	 * getAllAuctionsByTime
+	 * 
+	 * @param jwt
+	 * @param time
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "getAllAuctionsByTime", path = "auctionstime", httpMethod = ApiMethod.HttpMethod.GET)
 	public List<Auctions> getAllAuctionsByTime(@Named("jwt") String jwt, @Named("time") String time)
-			throws NotFoundException, UnauthorizedException {
+			throws NotFoundException, UnauthorizedException, BadRequestException {
 
 		if (jwt != null) {
 			getCurrentStudent(jwt);
 			List<Auctions> auctions = aDAO.getAuctionsByTime(time);
 			return auctions;
 		} else {
-			throw new NotFoundException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 
 	}
 
+	/**
+	 * getAllAuctionsByPrice
+	 * 
+	 * @param jwt
+	 * @param price
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
 	@ApiMethod(name = "getAllAuctionsByPrice", path = "auctionsprice", httpMethod = ApiMethod.HttpMethod.GET)
 	public List<Auctions> getAllAuctionsByPrice(@Named("jwt") String jwt, @Named("price") String price)
-			throws NotFoundException, UnauthorizedException {
+			throws NotFoundException, UnauthorizedException, BadRequestException {
 
 		if (jwt != null) {
 			getCurrentStudent(jwt);
 			List<Auctions> auctions = aDAO.getAuctionsByPrice(price);
 			return auctions;
 		} else {
-			throw new NotFoundException("empty jwt");
+			throw new BadRequestException("invalid parameters");
 		}
 
 	}
 
+	/**
+	 * removeStudent
+	 * 
+	 * @param email
+	 * @return
+	 * @throws NotFoundException
+	 * @throws BadRequestException
+	 */
 	@Transactional
 	@ApiMethod(name = "removeStudent", path = "remove/student/{email}", httpMethod = ApiMethod.HttpMethod.DELETE)
-	public Students removeStudent(@Named("email") String email) throws NotFoundException {
+	public Students removeStudent(@Named("email") String email) throws NotFoundException, BadRequestException {
 
 		Students students = sDAO.removeStudent(email);
 		if (students != null) {
 			return students;
 		} else {
-			throw new NotFoundException("Student doesn't exist.");
+			throw new BadRequestException("invalid parameters");
 		}
 	}
 
+	/**
+	 * getAllStudents
+	 * 
+	 * @return
+	 */
 	@ApiMethod(name = "getAllStudents", path = "getAllStudents", httpMethod = ApiMethod.HttpMethod.GET)
 	public List<Students> getStudents() {
 
@@ -401,14 +567,30 @@ public class StudentsEP {
 		return user;
 	}
 
+	/**
+	 * getCurrentDate
+	 * 
+	 * @return current date
+	 */
 	private Date getCurrentDate() {
 		return Calendar.getInstance().getTime();
 	}
 
+	/**
+	 * createHash
+	 * 
+	 * @return uuid hash
+	 */
 	private String createHash() {
 		return UUID.randomUUID().toString().replaceAll("-", "");
 	}
 
+	/**
+	 * isValidEmail
+	 * 
+	 * @param email
+	 * @return if email is valid or not by EMAIL_PATTERN
+	 */
 	private boolean isValidEmail(String email) {
 		Pattern emailPattern = Pattern.compile(EMAIL_PATTERN);
 		try {
@@ -421,11 +603,23 @@ public class StudentsEP {
 
 	}
 
+	/**
+	 * isValidPhone
+	 * 
+	 * @param phone
+	 * @return if phone is valid or not by PHONE_PATTERN
+	 */
 	private boolean isValidPhone(String phone) {
 		Pattern phonePattern = Pattern.compile(PHONE_PATTERN);
 		return phonePattern.matcher(phone).matches();
 	}
 
+	/**
+	 * isValidPassword
+	 * 
+	 * @param password
+	 * @return if password.length >= PASSWORD_MIN_LENGTH
+	 */
 	private boolean isValidPassword(String password) {
 		return password.length() >= PASSWORD_MIN_LENGTH;
 	}

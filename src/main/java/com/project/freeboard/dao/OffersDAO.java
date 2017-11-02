@@ -9,7 +9,6 @@ import javax.persistence.TypedQuery;
 
 import com.project.freeboard.entity.Offers;
 import com.project.freeboard.entity.Students;
-import com.project.freeboard.util.PersistenceManager;
 
 public class OffersDAO {
 

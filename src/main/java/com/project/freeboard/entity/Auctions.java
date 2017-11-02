@@ -32,6 +32,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "idauctions" }) })
 @XmlRootElement
 @NamedQueries({ @NamedQuery(name = "Auctions.findAll", query = "SELECT a FROM Auctions a"),
+		@NamedQuery(name = "Auctions.getOffersByCompany", query = "SELECT a FROM Auctions a WHERE a.companiesId = :companiesId"),
 		@NamedQuery(name = "Auctions.findByIdauctions", query = "SELECT a FROM Auctions a WHERE a.idauctions = :idauctions"),
 		@NamedQuery(name = "Auctions.findByName", query = "SELECT a FROM Auctions a WHERE a.name = :name"),
 		@NamedQuery(name = "Auctions.findByType", query = "SELECT a FROM Auctions a WHERE a.type = :type"),
@@ -260,8 +261,7 @@ public class Auctions implements Serializable {
 
 	@Override
 	public boolean equals(Object object) {
-		// TODO: Warning - this method won't work in the case the id fields are
-		// not set
+
 		if (!(object instanceof Auctions)) {
 			return false;
 		}
@@ -277,7 +277,5 @@ public class Auctions implements Serializable {
 	public String toString() {
 		return "com.project.freeboard.entity.Auctions[ idauctions=" + idauctions + " ]";
 	}
-
-
 
 }

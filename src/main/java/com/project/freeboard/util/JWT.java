@@ -6,17 +6,11 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import javax.crypto.spec.SecretKeySpec;
-
-import com.google.api.server.spi.response.UnauthorizedException;
 import com.project.freeboard.entity.Companies;
 import com.project.freeboard.entity.Students;
-
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.SignatureException;
 
 public class JWT {
 
@@ -41,9 +35,10 @@ public class JWT {
 	}
 
 	/**
-	 * * Generate the access token and its expiration date in order to be used
-	 * within * 10 minutes based on the system's current date time * * @param
-	 * user * The user who will be configured with his access properties
+	 * * Generate the access token to a company and its expiration date in order
+	 * to be used within * 10 minutes based on the system's current date time *
+	 * * @param user * The user who will be configured with his access
+	 * properties
 	 */
 	public static String generateToken(Companies companies) {
 		JwtBuilder builder = Jwts.builder().setId(companies.getEmail())
@@ -52,6 +47,12 @@ public class JWT {
 		return builder.compact();
 	}
 
+	/**
+	 * * Generate the access token to a student and its expiration date in order
+	 * to be used within * 10 minutes based on the system's current date time *
+	 * * @param user * The user who will be configured with his access
+	 * properties
+	 */
 	public static String generateToken(Students student) {
 		JwtBuilder builder = Jwts.builder().setId(student.getEmail())
 				.setIssuedAt(GregorianCalendar.getInstance().getTime()).setExpiration(generateTokenExpiration())

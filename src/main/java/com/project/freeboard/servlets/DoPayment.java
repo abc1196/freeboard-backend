@@ -22,6 +22,11 @@ import com.project.freeboard.service.CompaniesEP;
  */
 public class DoPayment extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	public final static String STATE_POL_APPROVED = "4";
 	public final static String RESPONSE_MESSAGE_POL_APPROVED = "APPROVED";
 	public final static String RESPONSE_CODE_POL_APPROVED = "1";
