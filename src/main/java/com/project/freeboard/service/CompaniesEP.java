@@ -427,8 +427,8 @@ public class CompaniesEP {
 	 * @throws NotFoundException
 	 *             * If the auction doesn't exists
 	 */
-	@ApiMethod(name = "getAuctionById", path = "auctionsById/{id}", httpMethod = ApiMethod.HttpMethod.GET)
-	public Auctions getAuctionById(@Named("id") String id) throws NotFoundException {
+	@ApiMethod(name = "getAuctionByIdc", path = "auctionsByIdc/{id}", httpMethod = ApiMethod.HttpMethod.GET)
+	public Auctions getAuctionByIdc(@Named("id") String id) throws NotFoundException {
 
 		Auctions auction = aDAO.getAuctionsById(id);
 		if (auction != null) {

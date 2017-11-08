@@ -216,7 +216,7 @@ public class DoPayment extends HttpServlet {
 	 */
 	private String consultBusinessEmail(String id_auction) throws NotFoundException {
 
-		return epCompany.getAuctionById(id_auction).getCompaniesId().getEmail();
+		return epCompany.getAuctionByIdc(id_auction).getCompaniesId().getEmail();
 	}
 
 	/**
@@ -227,7 +227,7 @@ public class DoPayment extends HttpServlet {
 	 * @throws NotFoundException
 	 */
 	private String consultStudentEmail(String id_auction) throws NotFoundException {
-		return epCompany.getAuctionById(id_auction).getWinnerOffer().getStudentsId().getEmail();
+		return epCompany.getAuctionByIdc(id_auction).getWinnerOffer().getStudentsId().getEmail();
 	}
 
 	/**
@@ -237,7 +237,7 @@ public class DoPayment extends HttpServlet {
 	 * @throws NotFoundException
 	 */
 	private String consultProjectName(String id_auction) throws NotFoundException {
-		return epCompany.getAuctionById(id_auction).getName();
+		return epCompany.getAuctionByIdc(id_auction).getName();
 	}
 
 	/**
@@ -247,7 +247,7 @@ public class DoPayment extends HttpServlet {
 	 * @throws NotFoundException
 	 */
 	private String consultCompanyPhone(String id_auction) throws NotFoundException {
-		return epCompany.getAuctionById(id_auction).getCompaniesId().getPhone();
+		return epCompany.getAuctionByIdc(id_auction).getCompaniesId().getPhone();
 	}
 
 	/**
@@ -258,7 +258,7 @@ public class DoPayment extends HttpServlet {
 	 * @throws NotFoundException
 	 */
 	private String consultCompanyMainContact(String id_auction) throws NotFoundException {
-		return epCompany.getAuctionById(id_auction).getCompaniesId().getContactPerson();
+		return epCompany.getAuctionByIdc(id_auction).getCompaniesId().getContactPerson();
 	}
 
 	/**
@@ -268,7 +268,7 @@ public class DoPayment extends HttpServlet {
 	 * @throws NotFoundException
 	 */
 	private String consultCompanyName(String id_auction) throws NotFoundException {
-		return epCompany.getAuctionById(id_auction).getCompaniesId().getName();
+		return epCompany.getAuctionByIdc(id_auction).getCompaniesId().getName();
 	}
 
 	/**
@@ -278,7 +278,7 @@ public class DoPayment extends HttpServlet {
 	 * @throws NotFoundException
 	 */
 	private String consultStudentName(String id_auction) throws NotFoundException {
-		return epCompany.getAuctionById(id_auction).getWinnerOffer().getStudentsId().getName();
+		return epCompany.getAuctionByIdc(id_auction).getWinnerOffer().getStudentsId().getName();
 	}
 
 	/**
@@ -289,7 +289,7 @@ public class DoPayment extends HttpServlet {
 	 * @throws NotFoundException
 	 */
 	private String consultStudentLast(String id_auction) throws NotFoundException {
-		return epCompany.getAuctionById(id_auction).getWinnerOffer().getStudentsId().getLastname();
+		return epCompany.getAuctionByIdc(id_auction).getWinnerOffer().getStudentsId().getLastname();
 	}
 
 	/**
@@ -300,7 +300,7 @@ public class DoPayment extends HttpServlet {
 	 * @throws NotFoundException
 	 */
 	private String consultStudentPhone(String id_auction) throws NotFoundException {
-		return epCompany.getAuctionById(id_auction).getWinnerOffer().getStudentsId().getPhone();
+		return epCompany.getAuctionByIdc(id_auction).getWinnerOffer().getStudentsId().getPhone();
 	}
 
 	/**
@@ -408,7 +408,7 @@ public class DoPayment extends HttpServlet {
 	 * @throws NotFoundException
 	 */
 	private Transactions searchTransaction(String id_auction, String reference_code) throws NotFoundException {
-		List<Transactions> transactionList = epCompany.getAuctionById(id_auction).getWinnerOffer()
+		List<Transactions> transactionList = epCompany.getAuctionByIdc(id_auction).getWinnerOffer()
 				.getTransactionsList();
 		Transactions trans = null;
 
