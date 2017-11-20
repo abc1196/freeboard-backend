@@ -79,27 +79,21 @@ public class StudentsEP {
 	 * @throws BadRequestException
 	 */
 	@ApiMethod(name = "signUpStudent", path = "signup/student", httpMethod = ApiMethod.HttpMethod.POST)
-	public Students signUpStudent(@Named("email") String email, @Named("name") String name,
-			@Named("lastname") String lastname, @Named("phone") String phone, @Named("bankWire") String bankWire,
-			@Named("bank") String bank, @Named("accountType") String accountType,
-			@Named("university") String university, @Named("career") String career,
-			@Named("accountOwner") String accountOwner, @Named("password") String password)
-			throws NotFoundException, BadRequestException {
+	public Students signUpStudent(Students students) throws NotFoundException, BadRequestException {
 
-		if (email != null && !email.equals("") && name != null && !name.equals("") && phone != null && !phone.equals("")
-				&& lastname != null && !lastname.equals("") && name != null && !name.equals("")) {
+		if (students != null) {
 
-			if (sDAO.getStudentByEmail(email) != null) {
+			if (sDAO.getStudentByEmail(students.getEmail()) != null) {
 				throw new BadRequestException("Email already in use.");
 			}
 			ArrayList<String> invalidInputs = new ArrayList<String>();
-			if (!isValidEmail(email)) {
+			if (!isValidEmail(students.getEmail())) {
 				invalidInputs.add("Email");
 			}
-			if (!isValidPhone(phone)) {
+			if (!isValidPhone(students.getPhone())) {
 				invalidInputs.add("Phone");
 			}
-			if (!isValidPassword(password)) {
+			if (!isValidPassword(students.getPassword())) {
 				invalidInputs.add("Password");
 			}
 			if (!invalidInputs.isEmpty()) {
@@ -111,10 +105,10 @@ public class StudentsEP {
 			}
 			String hash = createHash();
 			Date created = getCurrentDate();
-			Students s = new Students(email, name, lastname, password, university, phone, bankWire, bank, accountType,
-					accountOwner, hash, created);
-			if (sDAO.addStudent(s)) {
-				return s;
+			students.setHash(hash);
+			students.setCreated(created);
+			if (sDAO.addStudent(students)) {
+				return students;
 			} else {
 				throw new NotFoundException("Student not added.");
 			}

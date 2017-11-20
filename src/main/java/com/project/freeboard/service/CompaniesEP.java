@@ -78,24 +78,20 @@ public class CompaniesEP {
 	 *             * When the company couldn't be added.
 	 */
 	@ApiMethod(name = "signUpCompany", path = "signup/company", httpMethod = ApiMethod.HttpMethod.POST)
-	public Companies signUpCompany(@Named("email") String email, @Named("name") String name,
-			@Named("phone") String phone, @Named("address") String address, @Named("password") String password,
-			@Named("contactPerson") String contactPerson) throws BadRequestException, NotFoundException {
-		if (email != null && !email.equals("") && name != null && !name.equals("") && phone != null && !phone.equals("")
-				&& address != null && !address.equals("") && password != null && !password.equals("")
-				&& contactPerson != null && !contactPerson.equals("")) {
+	public Companies signUpCompany(Companies companies) throws BadRequestException, NotFoundException {
+		if (companies!=null) {
 
-			if (cDAO.getCompanyByEmail(email) != null) {
+			if (cDAO.getCompanyByEmail(companies.getEmail()) != null) {
 				throw new BadRequestException("Email already in use.");
 			}
 			ArrayList<String> invalidInputs = new ArrayList<String>();
-			if (!isValidEmail(email)) {
+			if (!isValidEmail(companies.getEmail())) {
 				invalidInputs.add("Email");
 			}
-			if (!isValidPhone(phone)) {
+			if (!isValidPhone(companies.getPhone())) {
 				invalidInputs.add("Phone");
 			}
-			if (!isValidPassword(password)) {
+			if (!isValidPassword(companies.getPassword())) {
 				invalidInputs.add("Password");
 			}
 			if (!invalidInputs.isEmpty()) {
@@ -107,10 +103,11 @@ public class CompaniesEP {
 			}
 			String hash = createHash();
 			Date created = getCurrentDate();
-			Companies company = new Companies(email, name, phone, address, password, contactPerson, hash, created);
-			if (cDAO.addCompany(company)) {
+			companies.setHash(hash);
+			companies.setCreated(created);
+			if (cDAO.addCompany(companies)) {
 
-				return company;
+				return companies;
 			} else {
 				throw new NotFoundException("Company not added.");
 			}
@@ -129,9 +126,8 @@ public class CompaniesEP {
 	 */
 	@ApiMethod(name = "updateCompany", path = "update/company", httpMethod = ApiMethod.HttpMethod.PUT)
 	public Companies updateCompany(Companies c) throws NotFoundException {
-		// cDAO = new CompaniesDAO();
-		Date updated = Calendar.getInstance().getTime();
-		c.setUpdated(updated);
+
+		c.setUpdated(getCurrentDate());
 		if (cDAO.updateCompanie(c)) {
 			return c;
 		} else {
@@ -406,7 +402,7 @@ public class CompaniesEP {
 	}
 
 	@ApiMethod(name = "getAllAuctionsByCompany", path = "offers", httpMethod = ApiMethod.HttpMethod.GET)
-	public List<Auctions> getAllOffersByStudent(@Named("jwt") String jwt)
+	public List<Auctions> getAllAuctionsByCompany(@Named("jwt") String jwt)
 			throws UnauthorizedException, BadRequestException {
 
 		if (jwt != null) {

@@ -59,8 +59,7 @@ public class Companies implements Serializable {
     @Basic(optional = false)
     @Column(nullable = false, length = 45)
     private String address;
-    
-    @JsonIgnore
+
     @Basic(optional = false)
     @Column(nullable = false, length = 45)
     private String password;
