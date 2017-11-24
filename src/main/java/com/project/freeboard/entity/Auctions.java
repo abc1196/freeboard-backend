@@ -40,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 		@NamedQuery(name = "Auctions.findByMainColor", query = "SELECT a FROM Auctions a WHERE a.mainColor = :mainColor"),
 		@NamedQuery(name = "Auctions.findBySecundaryColor", query = "SELECT a FROM Auctions a WHERE a.secundaryColor = :secundaryColor"),
 		@NamedQuery(name = "Auctions.findByDescription", query = "SELECT a FROM Auctions a WHERE a.description = :description"),
-		@NamedQuery(name = "Auctions.findByTime", query = "SELECT a FROM Auctions a WHERE a.time <= :time"),
+		@NamedQuery(name = "Auctions.findByTime", query = "SELECT a FROM Auctions a WHERE a.closeDate <= :time"),
 		@NamedQuery(name = "Auctions.findByPrice", query = "SELECT a FROM Auctions a WHERE a.price = :price"),
 		@NamedQuery(name = "Auctions.findByCreated", query = "SELECT a FROM Auctions a WHERE a.created = :created"),
 		@NamedQuery(name = "Auctions.findByUpdated", query = "SELECT a FROM Auctions a WHERE a.updated = :updated") })
@@ -78,8 +78,8 @@ public class Auctions implements Serializable {
 
 	@Basic(optional = false)
 	@Column(nullable = false)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date time;
+	@Temporal(TemporalType.DATE)
+	private Date closeDate;
 
 	@Basic(optional = false)
 	@Column(nullable = false, length = 45)
@@ -87,12 +87,13 @@ public class Auctions implements Serializable {
 
 	@Lob
 	private byte[] sketch;
+	
 	@Basic(optional = false)
 	@Column(nullable = false)
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date created;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date updated;
 
 	@JsonIgnore
@@ -126,7 +127,7 @@ public class Auctions implements Serializable {
 		this.mainColor = mainColor;
 		this.secundaryColor = secundaryColor;
 		this.description = description;
-		this.time = time;
+		this.closeDate = time;
 		this.price = price;
 		this.created = created;
 	}
@@ -187,12 +188,12 @@ public class Auctions implements Serializable {
 		this.description = description;
 	}
 
-	public Date getTime() {
-		return time;
+	public Date getCloseDate() {
+		return closeDate;
 	}
 
-	public void setTime(Date time) {
-		this.time = time;
+	public void setCloseDate(Date time) {
+		this.closeDate = time;
 	}
 
 	public String getPrice() {

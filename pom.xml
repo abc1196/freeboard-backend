@@ -26,9 +26,6 @@
 
 		<modelmapper.version>1.0.0</modelmapper.version>
 
-		<cloudsql.url>jdbc:google:mysql://cloud-computing-freeboard:us-central1:db-freeboard/db-freeboard?zeroDateTimeBehavior=convertToNull</cloudsql.url>
-		<cloudsql.url.dev>jdbc:mysql://localhost:3303/freeboardv1?zeroDateTimeBehavior=convertToNull</cloudsql.url.dev>
-
 	</properties>
 	<dependencies>
 		<dependency>

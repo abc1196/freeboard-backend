@@ -88,9 +88,9 @@ public class Students implements Serializable {
     private String hash;
     @Basic(optional = false)
     @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date created;
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date updated;
    
     @JsonIgnore

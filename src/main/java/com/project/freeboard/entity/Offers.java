@@ -68,10 +68,10 @@ public class Offers implements Serializable {
     
     @Basic(optional = false)
     @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date created;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date updated;
     
     @JsonIgnore
@@ -103,6 +103,7 @@ public class Offers implements Serializable {
         this.idoffers = idoffers;
         this.state = state;
         this.created = created;
+		this.paid=0;
     }
 
     public String getIdoffers() {

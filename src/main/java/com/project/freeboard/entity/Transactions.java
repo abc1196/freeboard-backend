@@ -96,9 +96,9 @@ public class Transactions implements Serializable {
 	private String transactionscol;
 	@Basic(optional = false)
 	@Column(nullable = false)
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date created;
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date updated;
 
 	@JsonIgnore
