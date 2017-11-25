@@ -17,6 +17,7 @@ import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
 import com.google.api.server.spi.response.BadRequestException;
+import com.google.api.server.spi.response.InternalServerErrorException;
 import com.google.api.server.spi.response.NotFoundException;
 import com.google.api.server.spi.response.UnauthorizedException;
 import com.project.freeboard.dao.AuctionsDAO;
@@ -248,17 +249,25 @@ public class StudentsEP {
 	 * @throws NotFoundException
 	 * @throws UnauthorizedException
 	 * @throws BadRequestException
+	 * @throws InternalServerErrorException
 	 */
 	@ApiMethod(name = "updateOffers", path = "offers", httpMethod = ApiMethod.HttpMethod.PUT)
-	public Offers updateOffers(@Named("jwt") String jwt, Offers e)
-			throws NotFoundException, UnauthorizedException, BadRequestException {
+	public Offers updateOffers(@Named("jwt") String jwt, @Named("idoffers") String idoffers,
+			@Named("price") String price)
+			throws NotFoundException, UnauthorizedException, BadRequestException, InternalServerErrorException {
 		if (jwt != null) {
 
 			getCurrentStudent(jwt);
 			Date updated = getCurrentDate();
-			e.setUpdated(updated);
-			if (oDAO.updateOffers(e)) {
-				return e;
+			Offers o = oDAO.getOffersById(idoffers);
+			if (o != null) {
+				o.setPrice(price);
+				o.setUpdated(updated);
+				if (oDAO.updateOffers(o)) {
+					return o;
+				} else {
+					throw new InternalServerErrorException("Error en el Servidor. Intenta más tarde.");
+				}
 			} else {
 				throw new NotFoundException("Offer no existe.");
 			}
@@ -277,20 +286,33 @@ public class StudentsEP {
 	 * @throws NotFoundException
 	 * @throws UnauthorizedException
 	 * @throws BadRequestException
+	 * @throws InternalServerErrorException
 	 */
 	@Transactional
 	@ApiMethod(name = "removeOffers", path = "offers/{idoffer}", httpMethod = ApiMethod.HttpMethod.DELETE)
 	public Message removeOffers(@Named("jwt") String jwt, @Named("idAuction") String idAuction,
-			@Named("idoffer") String id) throws NotFoundException, UnauthorizedException, BadRequestException {
+			@Named("idoffer") String id)
+			throws NotFoundException, UnauthorizedException, BadRequestException, InternalServerErrorException {
 
 		if (jwt != null && idAuction != null && id != null) {
 
 			getCurrentStudent(jwt);
+			Auctions a = aDAO.getAuctionsById(idAuction);
+			if (a != null) {
+				Offers o = oDAO.getOffersById(id);
 
-			if (oDAO.removeOffers(id)) {
-				return new Message("Oferta eliminada");
+				if (o != null) {
+					a.getOffersList().remove(o);
+					if (oDAO.removeOffers(id)) {
+						return new Message("Oferta eliminada");
+					} else {
+						throw new InternalServerErrorException("Error en el servidor. Intenta más tarde");
+					}
+				} else {
+					throw new NotFoundException("Offer no existe.");
+				}
 			} else {
-				throw new NotFoundException("Offer no existe.");
+				throw new NotFoundException("Subasta no existe");
 			}
 		} else {
 			throw new BadRequestException("invalid parameters");
@@ -397,6 +419,33 @@ public class StudentsEP {
 				return companie;
 			} else {
 				throw new NotFoundException("Oferta no existe");
+			}
+		} else {
+			throw new BadRequestException("invalid parameters");
+		}
+	}
+
+	/**
+	 * getAuctionbyId
+	 * 
+	 * @param jwt
+	 * @param id
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
+	@ApiMethod(name = "getAuctionbyId", path = "auction", httpMethod = ApiMethod.HttpMethod.GET)
+	public Auctions getAuctionbyId(@Named("jwt") String jwt, @Named("auctionid") String id)
+			throws NotFoundException, UnauthorizedException, BadRequestException {
+
+		if (jwt != null && id != null) {
+			getCurrentStudent(jwt);
+			Auctions a = aDAO.getAuctionsById(id);
+			if (a != null) {
+				return a;
+			} else {
+				throw new NotFoundException("Subasta no existe");
 			}
 		} else {
 			throw new BadRequestException("invalid parameters");

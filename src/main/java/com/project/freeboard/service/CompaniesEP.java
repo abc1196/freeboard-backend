@@ -125,13 +125,17 @@ public class CompaniesEP {
 	 *             * If the given company doesn't exists.
 	 */
 	@ApiMethod(name = "updateCompany", path = "update/company", httpMethod = ApiMethod.HttpMethod.PUT)
-	public Companies updateCompany(Companies c) throws NotFoundException {
-
+	public Companies updateCompany(@Named("jwt") String jwt, Companies c) throws  NotFoundException, UnauthorizedException {
+		if (jwt != null) {
+		getCurrentCompany(jwt);	
 		c.setUpdated(getCurrentDate());
 		if (cDAO.updateCompanie(c)) {
 			return c;
 		} else {
 			throw new NotFoundException("Company doesn't exist.");
+		}
+		}else{
+			throw new UnauthorizedException("empty jwt");
 		}
 	}
 
@@ -612,6 +616,30 @@ public class CompaniesEP {
 
 			aDAO.updateAuctions(auction);
 			return winner;
+		} else {
+			throw new BadRequestException("invalid parameters");
+		}
+	}
+	
+	/**
+	 * getCompanyProfile
+	 * 
+	 * @param jwt
+	 * @return
+	 * @throws NotFoundException
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
+	@ApiMethod(name = "getCompanyProfile", path = "getCompanyProfile", httpMethod = ApiMethod.HttpMethod.GET)
+	public Companies getStudentProfile(@Named("jwt") String jwt)
+			throws NotFoundException, UnauthorizedException, BadRequestException {
+		if (jwt != null) {
+			Companies companies = getCurrentCompany(jwt);
+			if (companies != null) {
+				return companies;
+			} else {
+				throw new NotFoundException("Company doesn't exist.");
+			}
 		} else {
 			throw new BadRequestException("invalid parameters");
 		}

@@ -73,7 +73,7 @@ public class Auctions implements Serializable {
 	private String secundaryColor;
 
 	@Basic(optional = false)
-	@Column(nullable = false, length = 45)
+	@Column(nullable = false, length = 1000)
 	private String description;
 
 	@Basic(optional = false)

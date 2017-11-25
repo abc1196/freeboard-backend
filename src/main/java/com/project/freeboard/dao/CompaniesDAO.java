@@ -39,7 +39,6 @@ public class CompaniesDAO {
 			em.getTransaction().commit();
 			return true;
 		} catch (Exception ex) {
-			ex.printStackTrace();
 			return false;
 		}
 	}
