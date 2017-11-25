@@ -588,6 +588,33 @@ public class CompaniesEP {
 		}
 
 	}
+	
+	/**
+	 * showOffers Allows to show the offers of an auction created by a company.
+	 * 
+	 * @param jwt
+	 * @param auctionid
+	 * @return Returns the list of offers.
+	 * @throws UnauthorizedException
+	 * @throws BadRequestException
+	 */
+	@ApiMethod(name = "getEstudentByOffer", path = "auctionsGetStudent/{offerid}", httpMethod = ApiMethod.HttpMethod.GET)
+	public Students getEstudentByOffer(@Named("jwt") String jwt, @Named("offerid") String offerid)
+			throws UnauthorizedException, BadRequestException {
+		if (jwt != null && offerid != null) {
+			getCurrentCompany(jwt);
+			Offers offer = oDAO.getOffersById(offerid);
+			Students student= offer.getStudentsId();
+					
+			return student;
+		} else {
+			throw new BadRequestException("invalid parameters");
+		}
+
+	}
+	
+	
+	
 
 	/**
 	 * closeAuction Allows to deny the non winning offers.
