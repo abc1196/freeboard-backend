@@ -304,6 +304,7 @@ public class StudentsEP {
 				if (o != null) {
 					a.getOffersList().remove(o);
 					if (oDAO.removeOffers(id)) {
+						aDAO.updateAuctions(a);
 						return new Message("Oferta eliminada");
 					} else {
 						throw new InternalServerErrorException("Error en el servidor. Intenta más tarde");
