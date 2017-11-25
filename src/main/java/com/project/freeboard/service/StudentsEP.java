@@ -229,7 +229,7 @@ public class StudentsEP {
 			offer.setStudentsId(students);
 			actualAuction.getOffersList().add(offer);
 			students.getOffersList().add(offer);
-			if (oDAO.addOffers(offer)) {
+			if (oDAO.addOffers(offer) && aDAO.updateAuctions(actualAuction)) {
 				return offer;
 			} else {
 				throw new NotFoundException("Offers no se pudo agregar.");
@@ -263,7 +263,9 @@ public class StudentsEP {
 			if (o != null) {
 				o.setPrice(price);
 				o.setUpdated(updated);
-				if (oDAO.updateOffers(o)) {
+				if (oDAO.updateOffers(o) &&
+
+						aDAO.updateAuctions(o.getAuctionsIdauctions())) {
 					return o;
 				} else {
 					throw new InternalServerErrorException("Error en el Servidor. Intenta más tarde.");

@@ -598,8 +598,8 @@ public class CompaniesEP {
 	 * @throws UnauthorizedException
 	 * @throws BadRequestException
 	 */
-	@ApiMethod(name = "getEstudentByOffer", path = "auctionsGetStudent/{offerid}", httpMethod = ApiMethod.HttpMethod.GET)
-	public Students getEstudentByOffer(@Named("jwt") String jwt, @Named("offerid") String offerid)
+	@ApiMethod(name = "getStudentByOffer", path = "auctionsGetStudent/{offerid}", httpMethod = ApiMethod.HttpMethod.GET)
+	public Students getStudentByOffer(@Named("jwt") String jwt, @Named("offerid") String offerid)
 			throws UnauthorizedException, BadRequestException {
 		if (jwt != null && offerid != null) {
 			getCurrentCompany(jwt);
