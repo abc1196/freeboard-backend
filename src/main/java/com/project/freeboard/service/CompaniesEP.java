@@ -79,7 +79,7 @@ public class CompaniesEP {
 	 */
 	@ApiMethod(name = "signUpCompany", path = "signup/company", httpMethod = ApiMethod.HttpMethod.POST)
 	public Companies signUpCompany(Companies companies) throws BadRequestException, NotFoundException {
-		if (companies!=null) {
+		if (companies != null) {
 
 			if (cDAO.getCompanyByEmail(companies.getEmail()) != null) {
 				throw new BadRequestException("Email already in use.");
@@ -125,16 +125,18 @@ public class CompaniesEP {
 	 *             * If the given company doesn't exists.
 	 */
 	@ApiMethod(name = "updateCompany", path = "update/company", httpMethod = ApiMethod.HttpMethod.PUT)
-	public Companies updateCompany(@Named("jwt") String jwt, Companies c) throws  NotFoundException, UnauthorizedException {
+	public Companies updateCompany(@Named("jwt") String jwt, Companies c)
+			throws NotFoundException, UnauthorizedException {
 		if (jwt != null) {
-		getCurrentCompany(jwt);	
-		c.setUpdated(getCurrentDate());
-		if (cDAO.updateCompanie(c)) {
-			return c;
+			Companies com=getCurrentCompany(jwt);
+		
+			c.setUpdated(getCurrentDate());
+			if (cDAO.updateCompanie(c)) {
+				return c;
+			} else {
+				throw new NotFoundException("Company doesn't exist.");
+			}
 		} else {
-			throw new NotFoundException("Company doesn't exist.");
-		}
-		}else{
 			throw new UnauthorizedException("empty jwt");
 		}
 	}
@@ -321,7 +323,9 @@ public class CompaniesEP {
 	 */
 	@ApiMethod(name = "updateAuction", path = "updateAuction", httpMethod = ApiMethod.HttpMethod.PUT)
 	public Auctions updateAuction(@Named("jwt") String jwt, Auctions a) throws NotFoundException, BadRequestException {
-		if (jwt != null) {
+		if (jwt != null && a!=null) {
+			a.setUpdated(getCurrentDate());
+			
 			if (aDAO.updateAuctions(a)) {
 				return a;
 			} else {
@@ -375,8 +379,8 @@ public class CompaniesEP {
 	}
 
 	/**
-	 * getStudentIdstudents Allows to retrieve the student associated to an
-	 * offer in an auction.
+	 * getStudentIdstudents Allows to retrieve the student associated to an offer in
+	 * an auction.
 	 * 
 	 * @param jwt
 	 * @param id
@@ -559,7 +563,9 @@ public class CompaniesEP {
 			getCurrentCompany(jwt);
 			Offers winner = oDAO.getOffersById(offerid);
 			winner.setState(Offers.ACCEPTED);
-			aDAO.getAuctionsById(auctionid).setWinnerOffer(winner);
+			Auctions auction=aDAO.getAuctionsById(auctionid);
+			auction.setWinnerOffer(winner);
+			aDAO.updateAuctions(auction);
 			oDAO.updateOffers(winner);
 			return winner;
 		} else {
@@ -581,14 +587,14 @@ public class CompaniesEP {
 			throws UnauthorizedException, BadRequestException {
 		if (jwt != null && auctionid != null) {
 			getCurrentCompany(jwt);
-			List<Offers> offersList = aDAO.getAuctionsById(auctionid).getOffersList();
+			List<Offers> offersList = oDAO.getOfferssByAuction(auctionid);
 			return offersList;
 		} else {
 			throw new BadRequestException("invalid parameters");
 		}
 
 	}
-	
+
 	/**
 	 * showOffers Allows to show the offers of an auction created by a company.
 	 * 
@@ -604,17 +610,14 @@ public class CompaniesEP {
 		if (jwt != null && offerid != null) {
 			getCurrentCompany(jwt);
 			Offers offer = oDAO.getOffersById(offerid);
-			Students student= offer.getStudentsId();
-					
+			Students student = offer.getStudentsId();
+
 			return student;
 		} else {
 			throw new BadRequestException("invalid parameters");
 		}
 
 	}
-	
-	
-	
 
 	/**
 	 * closeAuction Allows to deny the non winning offers.
@@ -647,7 +650,7 @@ public class CompaniesEP {
 			throw new BadRequestException("invalid parameters");
 		}
 	}
-	
+
 	/**
 	 * getCompanyProfile
 	 * 
@@ -675,9 +678,9 @@ public class CompaniesEP {
 	/**
 	 * * Allows retrieve the name, lastname and email of the logged user *
 	 * <p>
-	 * * * @param token * the JSON Web Token * @return The logged user
-	 * information * @throws UnauthorizedException * If the token isn't valid If
-	 * the token is expired
+	 * * * @param token * the JSON Web Token * @return The logged user information
+	 * * @throws UnauthorizedException * If the token isn't valid If the token is
+	 * expired
 	 */
 	private Companies getCurrentCompany(String token) throws UnauthorizedException {
 		String userEmail = null;

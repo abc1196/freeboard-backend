@@ -264,7 +264,6 @@ public class StudentsEP {
 				o.setPrice(price);
 				o.setUpdated(updated);
 				if (oDAO.updateOffers(o) &&
-
 						aDAO.updateAuctions(o.getAuctionsIdauctions())) {
 					return o;
 				} else {
@@ -306,6 +305,7 @@ public class StudentsEP {
 				if (o != null) {
 					a.getOffersList().remove(o);
 					if (oDAO.removeOffers(id)) {
+						
 						aDAO.updateAuctions(a);
 						return new Message("Oferta eliminada");
 					} else {
