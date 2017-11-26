@@ -18,6 +18,7 @@ import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
 import com.google.api.server.spi.response.BadRequestException;
+import com.google.api.server.spi.response.InternalServerErrorException;
 import com.google.api.server.spi.response.NotFoundException;
 import com.google.api.server.spi.response.UnauthorizedException;
 import com.project.freeboard.dao.AuctionsDAO;
@@ -76,10 +77,11 @@ public class CompaniesEP {
 	 *             * When the client sends invalid parameters.
 	 * @throws NotFoundException
 	 *             * When the company couldn't be added.
+	 * @throws InternalServerErrorException 
 	 */
 	@ApiMethod(name = "signUpCompany", path = "signup/company", httpMethod = ApiMethod.HttpMethod.POST)
-	public Companies signUpCompany(Companies companies) throws BadRequestException, NotFoundException {
-		if (companies!=null) {
+	public Companies signUpCompany(Companies companies) throws BadRequestException, NotFoundException, InternalServerErrorException {
+		if (companies != null) {
 
 			if (cDAO.getCompanyByEmail(companies.getEmail()) != null) {
 				throw new BadRequestException("Email already in use.");
@@ -109,7 +111,7 @@ public class CompaniesEP {
 
 				return companies;
 			} else {
-				throw new NotFoundException("Company not added.");
+				throw new InternalServerErrorException("Company not added.");
 			}
 		} else {
 			throw new BadRequestException("Fill all the required fields.");
@@ -125,16 +127,17 @@ public class CompaniesEP {
 	 *             * If the given company doesn't exists.
 	 */
 	@ApiMethod(name = "updateCompany", path = "update/company", httpMethod = ApiMethod.HttpMethod.PUT)
-	public Companies updateCompany(@Named("jwt") String jwt, Companies c) throws  NotFoundException, UnauthorizedException {
+	public Companies updateCompany(@Named("jwt") String jwt, Companies c)
+			throws NotFoundException, UnauthorizedException {
 		if (jwt != null) {
-		getCurrentCompany(jwt);	
-		c.setUpdated(getCurrentDate());
-		if (cDAO.updateCompanie(c)) {
-			return c;
+			getCurrentCompany(jwt);
+			c.setUpdated(getCurrentDate());
+			if (cDAO.updateCompanie(c)) {
+				return c;
+			} else {
+				throw new NotFoundException("Company doesn't exist.");
+			}
 		} else {
-			throw new NotFoundException("Company doesn't exist.");
-		}
-		}else{
 			throw new UnauthorizedException("empty jwt");
 		}
 	}
@@ -581,14 +584,14 @@ public class CompaniesEP {
 			throws UnauthorizedException, BadRequestException {
 		if (jwt != null && auctionid != null) {
 			getCurrentCompany(jwt);
-			List<Offers> offersList = aDAO.getAuctionsById(auctionid).getOffersList();
+			List<Offers> offersList = oDAO.getOfferssByAuction(aDAO.getAuctionsById(auctionid));
 			return offersList;
 		} else {
 			throw new BadRequestException("invalid parameters");
 		}
 
 	}
-	
+
 	/**
 	 * showOffers Allows to show the offers of an auction created by a company.
 	 * 
@@ -604,17 +607,14 @@ public class CompaniesEP {
 		if (jwt != null && offerid != null) {
 			getCurrentCompany(jwt);
 			Offers offer = oDAO.getOffersById(offerid);
-			Students student= offer.getStudentsId();
-					
+			Students student = offer.getStudentsId();
+
 			return student;
 		} else {
 			throw new BadRequestException("invalid parameters");
 		}
 
 	}
-	
-	
-	
 
 	/**
 	 * closeAuction Allows to deny the non winning offers.
@@ -637,6 +637,7 @@ public class CompaniesEP {
 				if (auction.getOffersList().get(i).getState().equals(Offers.ACCEPTED)) {
 					winner = auction.getOffersList().get(i);
 				} else {
+
 					auction.getOffersList().get(i).setState(Offers.DENIED);
 				}
 			}
@@ -647,7 +648,7 @@ public class CompaniesEP {
 			throw new BadRequestException("invalid parameters");
 		}
 	}
-	
+
 	/**
 	 * getCompanyProfile
 	 * 

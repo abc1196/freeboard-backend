@@ -12108,3 +12108,1047 @@
 18:32:40,758 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Auctions
 18:32:40,758 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" ha terminado
 18:32:40,759 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 5 clases. Tiempos : input=181 ms, enhance=34 ms, total=215 ms. Compruebe el LOG para los detalles
+18:50:45,933 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+18:50:45,963 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+18:50:45,989 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+18:50:45,991 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+18:50:45,993 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 4.1.11 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar.
+18:50:46,007 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+18:50:46,024 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+18:50:46,027 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jpa version 4.1.10 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar.
+18:50:46,029 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+18:50:46,030 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+18:50:46,031 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.jpa.query version 4.0.5 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar.
+18:50:46,032 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+18:50:46,032 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+18:50:46,033 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 4.1.13 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar.
+18:50:46,049 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+18:50:46,055 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+18:50:46,082 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+18:50:46,118 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+18:50:46,118 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+18:50:46,140 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,byte[],java.nio.ByteBuffer
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Character,java.lang.Integer
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+18:50:46,141 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double,java.nio.ByteBuffer
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long,java.nio.ByteBuffer
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,java.util.Date,java.sql.Timestamp,[Ljava.lang.Object;
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+18:50:46,142 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+18:50:46,143 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false
+18:50:46,143 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 4.1.11) para el API "JPA" utilisando el JRE "{2}"
+18:50:46,143 (main) DEBUG [DataNucleus.Enhancer] - DataNucleus Enhancer : Classpath
+18:50:46,144 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-maven-plugin\4.0.5\datanucleus-maven-plugin-4.0.5.jar
+18:50:46,144 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+18:50:46,144 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+18:50:46,144 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+18:50:46,144 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+18:50:46,144 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+18:50:46,144 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+18:50:46,145 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+18:50:46,145 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+18:50:46,145 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+18:50:46,145 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+18:50:46,145 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+18:50:46,145 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+18:50:46,145 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+18:50:46,145 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+18:50:46,145 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\Desktop\freeboard2.0\freeboard\target\freeboard-1.0-SNAPSHOT\WEB-INF\classes
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-core\4.1.11\datanucleus-core-4.1.11.jar
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-api-jpa\4.1.10\datanucleus-api-jpa-4.1.10.jar
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-jpa-query\4.0.5\datanucleus-jpa-query-4.0.5.jar
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-rdbms\4.1.13\datanucleus-rdbms-4.1.13.jar
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\javax.persistence\2.1.2\javax.persistence-2.1.2.jar
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\mysql\mysql-connector-java\5.1.17\mysql-connector-java-5.1.17.jar
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\modelmapper\modelmapper\1.0.0\modelmapper-1.0.0.jar
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-framework\2.0.8\endpoints-framework-2.0.8.jar
+18:50:46,146 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar
+18:50:46,147 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.6.4\jackson-annotations-2.6.4.jar
+18:50:46,147 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.6.4\jackson-core-2.6.4.jar
+18:50:46,147 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.6.4\jackson-databind-2.6.4.jar
+18:50:46,147 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jackson2\1.21.0\google-http-client-jackson2-1.21.0.jar
+18:50:46,147 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client\1.21.0\google-http-client-1.21.0.jar
+18:50:46,147 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpclient\4.0.1\httpclient-4.0.1.jar
+18:50:46,147 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-codec\commons-codec\1.3\commons-codec-1.3.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client\1.21.0\google-api-client-1.21.0.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client\1.21.0\google-oauth-client-1.21.0.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-appengine\1.21.0\google-api-client-appengine-1.21.0.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-appengine\1.21.0\google-oauth-client-appengine-1.21.0.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-servlet\1.21.0\google-oauth-client-servlet-1.21.0.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jdo\1.21.0\google-http-client-jdo-1.21.0.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-servlet\1.21.0\google-api-client-servlet-1.21.0.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\jdo\jdo2-api\2.3-eb\jdo2-api-2.3-eb.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-appengine\1.21.0\google-http-client-appengine-1.21.0.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\code\findbugs\jsr305\3.0.1\jsr305-3.0.1.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-models\1.5.9\swagger-models-1.5.9.jar
+18:50:46,148 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-api\1.6.3\slf4j-api-1.6.3.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-annotations\1.5.9\swagger-annotations-1.5.9.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-core\1.5.9\swagger-core-1.5.9.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-joda\2.4.5\jackson-datatype-joda-2.4.5.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\joda-time\joda-time\2.2\joda-time-2.2.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.4.5\jackson-dataformat-yaml-2.4.5.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\yaml\snakeyaml\1.12\snakeyaml-1.12.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-nop\1.7.21\slf4j-nop-1.7.21.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-management-control-appengine-all\1.0.5\endpoints-management-control-appengine-all-1.0.5.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\appengine\appengine-api-1.0-sdk\1.9.57\appengine-api-1.0-sdk-1.9.57.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-matchers\1.4\jcabi-matchers-1.4.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar
+18:50:46,149 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-log\0.17.2\jcabi-log-0.17.2.jar
+18:50:46,150 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-aspects\0.22\jcabi-aspects-0.22.jar
+18:50:46,150 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\aspectj\aspectjrt\1.8.4\aspectjrt-1.8.4.jar
+18:50:46,150 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\jsonwebtoken\jjwt\0.6.0\jjwt-0.6.0.jar
+18:50:46,150 (main) DEBUG [DataNucleus.Enhancer] - Enhancing classes
+18:50:46,154 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/C:/Users/alejo/Desktop/freeboard2.0/freeboard/target/freeboard-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" con handler "persistence" (validar="false")
+18:50:46,162 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "freeboard" ...
+18:50:46,164 (main) DEBUG [DataNucleus.MetaData] - Not found any metadata mapping files for resource name META-INF/orm.xml in CLASSPATH
+18:50:46,219 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:50:46,219 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotaciones de JPA y vamos a usarlas.
+18:50:46,249 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:50:46,250 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotaciones de JPA y vamos a usarlas.
+18:50:46,260 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:50:46,260 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotaciones de JPA y vamos a usarlas.
+18:50:46,265 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:50:46,265 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotaciones de JPA y vamos a usarlas.
+18:50:46,270 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:50:46,270 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotaciones de JPA y vamos a usarlas.
+18:50:46,277 (main) DEBUG [DataNucleus.MetaData] - Populación del MetaData ...
+18:50:46,278 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Populando Meta-Data
+18:50:46,280 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Populando Meta-Data
+18:50:46,281 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Populando Meta-Data
+18:50:46,281 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" campo "paid" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+18:50:46,282 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Populando Meta-Data
+18:50:46,287 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Populando Meta-Data
+18:50:46,290 (main) DEBUG [DataNucleus.MetaData] - Inicialisación del MetaData ...
+18:50:46,291 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Inicializando Meta-Data
+18:50:46,293 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Inicializando Meta-Data
+18:50:46,293 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Inicializando Meta-Data
+18:50:46,294 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Inicializando Meta-Data
+18:50:46,294 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Inicializando Meta-Data
+18:50:46,294 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+18:50:46,300 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" empezando ...
+18:50:46,328 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Transactions" esta enhanced.
+18:50:46,328 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Transactions
+18:50:46,328 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" ha terminado
+18:50:46,328 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" empezando ...
+18:50:46,330 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Students" esta enhanced.
+18:50:46,330 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Students
+18:50:46,330 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" ha terminado
+18:50:46,330 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" empezando ...
+18:50:46,331 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Offers" esta enhanced.
+18:50:46,331 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Offers
+18:50:46,331 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" ha terminado
+18:50:46,331 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" empezando ...
+18:50:46,332 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Companies" esta enhanced.
+18:50:46,332 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Companies
+18:50:46,332 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" ha terminado
+18:50:46,332 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" empezando ...
+18:50:46,333 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Auctions" esta enhanced.
+18:50:46,333 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Auctions
+18:50:46,333 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" ha terminado
+18:50:46,334 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 5 clases. Tiempos : input=144 ms, enhance=39 ms, total=183 ms. Compruebe el LOG para los detalles
+18:55:42,158 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+18:55:42,188 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+18:55:42,210 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+18:55:42,212 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+18:55:42,216 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 4.1.11 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar.
+18:55:42,240 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+18:55:42,251 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+18:55:42,255 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jpa version 4.1.10 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar.
+18:55:42,257 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+18:55:42,257 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+18:55:42,264 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.jpa.query version 4.0.5 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar.
+18:55:42,265 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+18:55:42,265 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+18:55:42,267 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 4.1.13 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar.
+18:55:42,286 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+18:55:42,292 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+18:55:42,316 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+18:55:42,352 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+18:55:42,352 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+18:55:42,371 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+18:55:42,371 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+18:55:42,371 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+18:55:42,371 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,byte[],java.nio.ByteBuffer
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Character,java.lang.Integer
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double,java.nio.ByteBuffer
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long,java.nio.ByteBuffer
+18:55:42,372 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+18:55:42,373 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+18:55:42,373 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+18:55:42,373 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+18:55:42,373 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+18:55:42,373 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+18:55:42,373 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,java.util.Date,java.sql.Timestamp,[Ljava.lang.Object;
+18:55:42,373 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+18:55:42,373 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+18:55:42,373 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+18:55:42,373 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+18:55:42,373 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+18:55:42,373 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false
+18:55:42,373 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 4.1.11) para el API "JPA" utilisando el JRE "{2}"
+18:55:42,374 (main) DEBUG [DataNucleus.Enhancer] - DataNucleus Enhancer : Classpath
+18:55:42,374 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-maven-plugin\4.0.5\datanucleus-maven-plugin-4.0.5.jar
+18:55:42,374 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+18:55:42,374 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+18:55:42,374 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+18:55:42,374 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+18:55:42,374 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+18:55:42,374 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+18:55:42,374 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+18:55:42,374 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+18:55:42,375 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+18:55:42,375 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+18:55:42,375 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+18:55:42,375 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+18:55:42,375 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+18:55:42,375 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+18:55:42,375 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+18:55:42,375 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+18:55:42,375 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\Desktop\freeboard2.0\freeboard\target\freeboard-1.0-SNAPSHOT\WEB-INF\classes
+18:55:42,376 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-core\4.1.11\datanucleus-core-4.1.11.jar
+18:55:42,376 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-api-jpa\4.1.10\datanucleus-api-jpa-4.1.10.jar
+18:55:42,376 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-jpa-query\4.0.5\datanucleus-jpa-query-4.0.5.jar
+18:55:42,376 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-rdbms\4.1.13\datanucleus-rdbms-4.1.13.jar
+18:55:42,376 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\javax.persistence\2.1.2\javax.persistence-2.1.2.jar
+18:55:42,376 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+18:55:42,376 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\mysql\mysql-connector-java\5.1.17\mysql-connector-java-5.1.17.jar
+18:55:42,376 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\modelmapper\modelmapper\1.0.0\modelmapper-1.0.0.jar
+18:55:42,376 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-framework\2.0.8\endpoints-framework-2.0.8.jar
+18:55:42,376 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar
+18:55:42,377 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.6.4\jackson-annotations-2.6.4.jar
+18:55:42,377 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.6.4\jackson-core-2.6.4.jar
+18:55:42,377 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.6.4\jackson-databind-2.6.4.jar
+18:55:42,377 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jackson2\1.21.0\google-http-client-jackson2-1.21.0.jar
+18:55:42,377 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client\1.21.0\google-http-client-1.21.0.jar
+18:55:42,377 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpclient\4.0.1\httpclient-4.0.1.jar
+18:55:42,377 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar
+18:55:42,377 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar
+18:55:42,378 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-codec\commons-codec\1.3\commons-codec-1.3.jar
+18:55:42,378 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client\1.21.0\google-api-client-1.21.0.jar
+18:55:42,378 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client\1.21.0\google-oauth-client-1.21.0.jar
+18:55:42,378 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-appengine\1.21.0\google-api-client-appengine-1.21.0.jar
+18:55:42,378 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-appengine\1.21.0\google-oauth-client-appengine-1.21.0.jar
+18:55:42,378 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-servlet\1.21.0\google-oauth-client-servlet-1.21.0.jar
+18:55:42,379 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jdo\1.21.0\google-http-client-jdo-1.21.0.jar
+18:55:42,379 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-servlet\1.21.0\google-api-client-servlet-1.21.0.jar
+18:55:42,379 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\jdo\jdo2-api\2.3-eb\jdo2-api-2.3-eb.jar
+18:55:42,379 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+18:55:42,379 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-appengine\1.21.0\google-http-client-appengine-1.21.0.jar
+18:55:42,379 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\code\findbugs\jsr305\3.0.1\jsr305-3.0.1.jar
+18:55:42,379 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-models\1.5.9\swagger-models-1.5.9.jar
+18:55:42,379 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-api\1.6.3\slf4j-api-1.6.3.jar
+18:55:42,379 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-annotations\1.5.9\swagger-annotations-1.5.9.jar
+18:55:42,379 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-core\1.5.9\swagger-core-1.5.9.jar
+18:55:42,380 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar
+18:55:42,380 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-joda\2.4.5\jackson-datatype-joda-2.4.5.jar
+18:55:42,380 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\joda-time\joda-time\2.2\joda-time-2.2.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.4.5\jackson-dataformat-yaml-2.4.5.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\yaml\snakeyaml\1.12\snakeyaml-1.12.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-nop\1.7.21\slf4j-nop-1.7.21.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-management-control-appengine-all\1.0.5\endpoints-management-control-appengine-all-1.0.5.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\appengine\appengine-api-1.0-sdk\1.9.57\appengine-api-1.0-sdk-1.9.57.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-matchers\1.4\jcabi-matchers-1.4.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar
+18:55:42,381 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-log\0.17.2\jcabi-log-0.17.2.jar
+18:55:42,382 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-aspects\0.22\jcabi-aspects-0.22.jar
+18:55:42,382 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\aspectj\aspectjrt\1.8.4\aspectjrt-1.8.4.jar
+18:55:42,382 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\jsonwebtoken\jjwt\0.6.0\jjwt-0.6.0.jar
+18:55:42,383 (main) DEBUG [DataNucleus.Enhancer] - Enhancing classes
+18:55:42,386 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/C:/Users/alejo/Desktop/freeboard2.0/freeboard/target/freeboard-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" con handler "persistence" (validar="false")
+18:55:42,394 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "freeboard" ...
+18:55:42,396 (main) DEBUG [DataNucleus.MetaData] - Not found any metadata mapping files for resource name META-INF/orm.xml in CLASSPATH
+18:55:42,463 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:55:42,463 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotaciones de JPA y vamos a usarlas.
+18:55:42,494 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:55:42,494 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotaciones de JPA y vamos a usarlas.
+18:55:42,504 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:55:42,504 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotaciones de JPA y vamos a usarlas.
+18:55:42,509 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:55:42,509 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotaciones de JPA y vamos a usarlas.
+18:55:42,512 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:55:42,512 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotaciones de JPA y vamos a usarlas.
+18:55:42,516 (main) DEBUG [DataNucleus.MetaData] - Populación del MetaData ...
+18:55:42,517 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Populando Meta-Data
+18:55:42,520 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Populando Meta-Data
+18:55:42,520 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Populando Meta-Data
+18:55:42,520 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" campo "paid" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+18:55:42,521 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Populando Meta-Data
+18:55:42,521 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Populando Meta-Data
+18:55:42,522 (main) DEBUG [DataNucleus.MetaData] - Inicialisación del MetaData ...
+18:55:42,522 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Inicializando Meta-Data
+18:55:42,526 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Inicializando Meta-Data
+18:55:42,526 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Inicializando Meta-Data
+18:55:42,526 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Inicializando Meta-Data
+18:55:42,526 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Inicializando Meta-Data
+18:55:42,526 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+18:55:42,533 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" empezando ...
+18:55:42,558 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Transactions" esta enhanced.
+18:55:42,558 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Transactions
+18:55:42,559 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" ha terminado
+18:55:42,559 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" empezando ...
+18:55:42,561 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Students" esta enhanced.
+18:55:42,561 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Students
+18:55:42,561 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" ha terminado
+18:55:42,562 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" empezando ...
+18:55:42,598 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Offers" esta enhanced.
+18:55:42,598 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Offers
+18:55:42,598 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" ha terminado
+18:55:42,598 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" empezando ...
+18:55:42,599 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Companies" esta enhanced.
+18:55:42,599 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Companies
+18:55:42,599 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" ha terminado
+18:55:42,599 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" empezando ...
+18:55:42,601 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Auctions" esta enhanced.
+18:55:42,601 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Auctions
+18:55:42,601 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" ha terminado
+18:55:42,601 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 5 clases. Tiempos : input=143 ms, enhance=75 ms, total=218 ms. Compruebe el LOG para los detalles
+18:58:35,074 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+18:58:35,104 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+18:58:35,127 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+18:58:35,128 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+18:58:35,130 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 4.1.11 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar.
+18:58:35,151 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+18:58:35,163 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+18:58:35,166 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jpa version 4.1.10 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar.
+18:58:35,167 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+18:58:35,168 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+18:58:35,170 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.jpa.query version 4.0.5 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar.
+18:58:35,171 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+18:58:35,171 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+18:58:35,173 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 4.1.13 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar.
+18:58:35,187 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+18:58:35,193 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+18:58:35,216 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+18:58:35,251 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+18:58:35,252 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+18:58:35,275 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,byte[],java.nio.ByteBuffer
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Character,java.lang.Integer
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+18:58:35,276 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double,java.nio.ByteBuffer
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long,java.nio.ByteBuffer
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,java.util.Date,java.sql.Timestamp,[Ljava.lang.Object;
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+18:58:35,277 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+18:58:35,278 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false
+18:58:35,278 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 4.1.11) para el API "JPA" utilisando el JRE "{2}"
+18:58:35,278 (main) DEBUG [DataNucleus.Enhancer] - DataNucleus Enhancer : Classpath
+18:58:35,278 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-maven-plugin\4.0.5\datanucleus-maven-plugin-4.0.5.jar
+18:58:35,278 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+18:58:35,278 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+18:58:35,278 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+18:58:35,278 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+18:58:35,278 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+18:58:35,278 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+18:58:35,278 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+18:58:35,279 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+18:58:35,279 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+18:58:35,279 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+18:58:35,279 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+18:58:35,279 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+18:58:35,279 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+18:58:35,279 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+18:58:35,279 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+18:58:35,279 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+18:58:35,279 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\Desktop\freeboard2.0\freeboard\target\freeboard-1.0-SNAPSHOT\WEB-INF\classes
+18:58:35,279 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-core\4.1.11\datanucleus-core-4.1.11.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-api-jpa\4.1.10\datanucleus-api-jpa-4.1.10.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-jpa-query\4.0.5\datanucleus-jpa-query-4.0.5.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-rdbms\4.1.13\datanucleus-rdbms-4.1.13.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\javax.persistence\2.1.2\javax.persistence-2.1.2.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\mysql\mysql-connector-java\5.1.17\mysql-connector-java-5.1.17.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\modelmapper\modelmapper\1.0.0\modelmapper-1.0.0.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-framework\2.0.8\endpoints-framework-2.0.8.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.6.4\jackson-annotations-2.6.4.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.6.4\jackson-core-2.6.4.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.6.4\jackson-databind-2.6.4.jar
+18:58:35,280 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jackson2\1.21.0\google-http-client-jackson2-1.21.0.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client\1.21.0\google-http-client-1.21.0.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpclient\4.0.1\httpclient-4.0.1.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-codec\commons-codec\1.3\commons-codec-1.3.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client\1.21.0\google-api-client-1.21.0.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client\1.21.0\google-oauth-client-1.21.0.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-appengine\1.21.0\google-api-client-appengine-1.21.0.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-appengine\1.21.0\google-oauth-client-appengine-1.21.0.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-servlet\1.21.0\google-oauth-client-servlet-1.21.0.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jdo\1.21.0\google-http-client-jdo-1.21.0.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-servlet\1.21.0\google-api-client-servlet-1.21.0.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\jdo\jdo2-api\2.3-eb\jdo2-api-2.3-eb.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+18:58:35,281 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-appengine\1.21.0\google-http-client-appengine-1.21.0.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\code\findbugs\jsr305\3.0.1\jsr305-3.0.1.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-models\1.5.9\swagger-models-1.5.9.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-api\1.6.3\slf4j-api-1.6.3.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-annotations\1.5.9\swagger-annotations-1.5.9.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-core\1.5.9\swagger-core-1.5.9.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-joda\2.4.5\jackson-datatype-joda-2.4.5.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\joda-time\joda-time\2.2\joda-time-2.2.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.4.5\jackson-dataformat-yaml-2.4.5.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\yaml\snakeyaml\1.12\snakeyaml-1.12.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-nop\1.7.21\slf4j-nop-1.7.21.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-management-control-appengine-all\1.0.5\endpoints-management-control-appengine-all-1.0.5.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\appengine\appengine-api-1.0-sdk\1.9.57\appengine-api-1.0-sdk-1.9.57.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar
+18:58:35,282 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar
+18:58:35,283 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar
+18:58:35,283 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-matchers\1.4\jcabi-matchers-1.4.jar
+18:58:35,283 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar
+18:58:35,283 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-log\0.17.2\jcabi-log-0.17.2.jar
+18:58:35,283 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-aspects\0.22\jcabi-aspects-0.22.jar
+18:58:35,283 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\aspectj\aspectjrt\1.8.4\aspectjrt-1.8.4.jar
+18:58:35,283 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\jsonwebtoken\jjwt\0.6.0\jjwt-0.6.0.jar
+18:58:35,283 (main) DEBUG [DataNucleus.Enhancer] - Enhancing classes
+18:58:35,287 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/C:/Users/alejo/Desktop/freeboard2.0/freeboard/target/freeboard-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" con handler "persistence" (validar="false")
+18:58:35,295 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "freeboard" ...
+18:58:35,297 (main) DEBUG [DataNucleus.MetaData] - Not found any metadata mapping files for resource name META-INF/orm.xml in CLASSPATH
+18:58:35,358 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:58:35,358 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotaciones de JPA y vamos a usarlas.
+18:58:35,396 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:58:35,396 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotaciones de JPA y vamos a usarlas.
+18:58:35,412 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:58:35,412 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotaciones de JPA y vamos a usarlas.
+18:58:35,422 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:58:35,422 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotaciones de JPA y vamos a usarlas.
+18:58:35,425 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+18:58:35,425 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotaciones de JPA y vamos a usarlas.
+18:58:35,429 (main) DEBUG [DataNucleus.MetaData] - Populación del MetaData ...
+18:58:35,430 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Populando Meta-Data
+18:58:35,433 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Populando Meta-Data
+18:58:35,434 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Populando Meta-Data
+18:58:35,434 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" campo "paid" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+18:58:35,434 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Populando Meta-Data
+18:58:35,434 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Populando Meta-Data
+18:58:35,436 (main) DEBUG [DataNucleus.MetaData] - Inicialisación del MetaData ...
+18:58:35,436 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Inicializando Meta-Data
+18:58:35,438 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Inicializando Meta-Data
+18:58:35,441 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Inicializando Meta-Data
+18:58:35,442 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Inicializando Meta-Data
+18:58:35,442 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Inicializando Meta-Data
+18:58:35,442 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+18:58:35,448 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" empezando ...
+18:58:35,467 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Transactions" esta enhanced.
+18:58:35,467 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Transactions
+18:58:35,467 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" ha terminado
+18:58:35,467 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" empezando ...
+18:58:35,468 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Students" esta enhanced.
+18:58:35,468 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Students
+18:58:35,468 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" ha terminado
+18:58:35,468 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" empezando ...
+18:58:35,469 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Offers" esta enhanced.
+18:58:35,469 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Offers
+18:58:35,469 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" ha terminado
+18:58:35,469 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" empezando ...
+18:58:35,470 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Companies" esta enhanced.
+18:58:35,470 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Companies
+18:58:35,470 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" ha terminado
+18:58:35,470 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" empezando ...
+18:58:35,472 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Auctions" esta enhanced.
+18:58:35,472 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Auctions
+18:58:35,472 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" ha terminado
+18:58:35,472 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 5 clases. Tiempos : input=159 ms, enhance=30 ms, total=189 ms. Compruebe el LOG para los detalles
+21:37:14,840 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+21:37:14,917 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+21:37:14,941 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+21:37:14,942 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+21:37:14,945 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 4.1.11 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar.
+21:37:14,967 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+21:37:14,980 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+21:37:14,983 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jpa version 4.1.10 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar.
+21:37:14,985 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+21:37:14,985 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+21:37:14,986 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.jpa.query version 4.0.5 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar.
+21:37:14,987 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+21:37:14,987 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+21:37:14,988 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 4.1.13 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar.
+21:37:15,007 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+21:37:15,014 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+21:37:15,038 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+21:37:15,075 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+21:37:15,075 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+21:37:15,098 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+21:37:15,098 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+21:37:15,098 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+21:37:15,098 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,byte[],java.nio.ByteBuffer
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Character,java.lang.Integer
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double,java.nio.ByteBuffer
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long,java.nio.ByteBuffer
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+21:37:15,099 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+21:37:15,100 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+21:37:15,100 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+21:37:15,100 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+21:37:15,100 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+21:37:15,100 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,java.util.Date,java.sql.Timestamp,[Ljava.lang.Object;
+21:37:15,100 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+21:37:15,100 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+21:37:15,100 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+21:37:15,100 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+21:37:15,100 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+21:37:15,100 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false
+21:37:15,100 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 4.1.11) para el API "JPA" utilisando el JRE "{2}"
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - DataNucleus Enhancer : Classpath
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-maven-plugin\4.0.5\datanucleus-maven-plugin-4.0.5.jar
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+21:37:15,101 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+21:37:15,102 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+21:37:15,102 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+21:37:15,102 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+21:37:15,102 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+21:37:15,102 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+21:37:15,102 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+21:37:15,102 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\Desktop\freeboard2.0\freeboard\target\freeboard-1.0-SNAPSHOT\WEB-INF\classes
+21:37:15,102 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-core\4.1.11\datanucleus-core-4.1.11.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-api-jpa\4.1.10\datanucleus-api-jpa-4.1.10.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-jpa-query\4.0.5\datanucleus-jpa-query-4.0.5.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-rdbms\4.1.13\datanucleus-rdbms-4.1.13.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\javax.persistence\2.1.2\javax.persistence-2.1.2.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\mysql\mysql-connector-java\5.1.17\mysql-connector-java-5.1.17.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\modelmapper\modelmapper\1.0.0\modelmapper-1.0.0.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-framework\2.0.8\endpoints-framework-2.0.8.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.6.4\jackson-annotations-2.6.4.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.6.4\jackson-core-2.6.4.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.6.4\jackson-databind-2.6.4.jar
+21:37:15,103 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jackson2\1.21.0\google-http-client-jackson2-1.21.0.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client\1.21.0\google-http-client-1.21.0.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpclient\4.0.1\httpclient-4.0.1.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-codec\commons-codec\1.3\commons-codec-1.3.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client\1.21.0\google-api-client-1.21.0.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client\1.21.0\google-oauth-client-1.21.0.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-appengine\1.21.0\google-api-client-appengine-1.21.0.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-appengine\1.21.0\google-oauth-client-appengine-1.21.0.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-servlet\1.21.0\google-oauth-client-servlet-1.21.0.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jdo\1.21.0\google-http-client-jdo-1.21.0.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-servlet\1.21.0\google-api-client-servlet-1.21.0.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\jdo\jdo2-api\2.3-eb\jdo2-api-2.3-eb.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+21:37:15,104 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-appengine\1.21.0\google-http-client-appengine-1.21.0.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\code\findbugs\jsr305\3.0.1\jsr305-3.0.1.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-models\1.5.9\swagger-models-1.5.9.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-api\1.6.3\slf4j-api-1.6.3.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-annotations\1.5.9\swagger-annotations-1.5.9.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-core\1.5.9\swagger-core-1.5.9.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-joda\2.4.5\jackson-datatype-joda-2.4.5.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\joda-time\joda-time\2.2\joda-time-2.2.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.4.5\jackson-dataformat-yaml-2.4.5.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\yaml\snakeyaml\1.12\snakeyaml-1.12.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-nop\1.7.21\slf4j-nop-1.7.21.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-management-control-appengine-all\1.0.5\endpoints-management-control-appengine-all-1.0.5.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\appengine\appengine-api-1.0-sdk\1.9.57\appengine-api-1.0-sdk-1.9.57.jar
+21:37:15,105 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar
+21:37:15,106 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar
+21:37:15,106 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar
+21:37:15,106 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar
+21:37:15,106 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-matchers\1.4\jcabi-matchers-1.4.jar
+21:37:15,106 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar
+21:37:15,106 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-log\0.17.2\jcabi-log-0.17.2.jar
+21:37:15,106 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-aspects\0.22\jcabi-aspects-0.22.jar
+21:37:15,106 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\aspectj\aspectjrt\1.8.4\aspectjrt-1.8.4.jar
+21:37:15,106 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\jsonwebtoken\jjwt\0.6.0\jjwt-0.6.0.jar
+21:37:15,107 (main) DEBUG [DataNucleus.Enhancer] - Enhancing classes
+21:37:15,114 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/C:/Users/alejo/Desktop/freeboard2.0/freeboard/target/freeboard-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" con handler "persistence" (validar="false")
+21:37:15,123 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "freeboard" ...
+21:37:15,124 (main) DEBUG [DataNucleus.MetaData] - Not found any metadata mapping files for resource name META-INF/orm.xml in CLASSPATH
+21:37:15,187 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+21:37:15,187 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotaciones de JPA y vamos a usarlas.
+21:37:15,248 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+21:37:15,248 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotaciones de JPA y vamos a usarlas.
+21:37:15,259 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+21:37:15,259 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotaciones de JPA y vamos a usarlas.
+21:37:15,303 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+21:37:15,303 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotaciones de JPA y vamos a usarlas.
+21:37:15,306 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+21:37:15,306 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotaciones de JPA y vamos a usarlas.
+21:37:15,310 (main) DEBUG [DataNucleus.MetaData] - Populación del MetaData ...
+21:37:15,310 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Populando Meta-Data
+21:37:15,312 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Populando Meta-Data
+21:37:15,313 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Populando Meta-Data
+21:37:15,313 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" campo "paid" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+21:37:15,313 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Populando Meta-Data
+21:37:15,313 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Populando Meta-Data
+21:37:15,314 (main) DEBUG [DataNucleus.MetaData] - Inicialisación del MetaData ...
+21:37:15,314 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Inicializando Meta-Data
+21:37:15,316 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Inicializando Meta-Data
+21:37:15,317 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Inicializando Meta-Data
+21:37:15,317 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Inicializando Meta-Data
+21:37:15,317 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Inicializando Meta-Data
+21:37:15,317 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+21:37:15,322 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" empezando ...
+21:37:15,341 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Transactions" esta enhanced.
+21:37:15,341 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Transactions
+21:37:15,341 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" ha terminado
+21:37:15,341 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" empezando ...
+21:37:15,342 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Students" esta enhanced.
+21:37:15,342 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Students
+21:37:15,342 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" ha terminado
+21:37:15,342 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" empezando ...
+21:37:15,343 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Offers" esta enhanced.
+21:37:15,343 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Offers
+21:37:15,343 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" ha terminado
+21:37:15,343 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" empezando ...
+21:37:15,344 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Companies" esta enhanced.
+21:37:15,344 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Companies
+21:37:15,344 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" ha terminado
+21:37:15,344 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" empezando ...
+21:37:15,345 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Auctions" esta enhanced.
+21:37:15,345 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Auctions
+21:37:15,345 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" ha terminado
+21:37:15,345 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 5 clases. Tiempos : input=210 ms, enhance=28 ms, total=238 ms. Compruebe el LOG para los detalles
+23:30:41,357 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+23:30:41,688 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+23:30:41,715 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+23:30:41,717 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+23:30:41,719 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 4.1.11 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar.
+23:30:41,735 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+23:30:41,748 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+23:30:41,751 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jpa version 4.1.10 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar.
+23:30:41,753 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+23:30:41,754 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+23:30:41,755 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.jpa.query version 4.0.5 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar.
+23:30:41,755 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+23:30:41,755 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+23:30:41,756 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 4.1.13 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar.
+23:30:41,775 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+23:30:41,779 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+23:30:41,809 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+23:30:41,846 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+23:30:41,846 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+23:30:41,876 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+23:30:41,876 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+23:30:41,876 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+23:30:41,876 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,byte[],java.nio.ByteBuffer
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Character,java.lang.Integer
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double,java.nio.ByteBuffer
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long,java.nio.ByteBuffer
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+23:30:41,877 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+23:30:41,878 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+23:30:41,878 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+23:30:41,878 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+23:30:41,878 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,java.util.Date,java.sql.Timestamp,[Ljava.lang.Object;
+23:30:41,878 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+23:30:41,878 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+23:30:41,878 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+23:30:41,878 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+23:30:41,878 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+23:30:41,878 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false
+23:30:41,878 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 4.1.11) para el API "JPA" utilisando el JRE "{2}"
+23:30:41,878 (main) DEBUG [DataNucleus.Enhancer] - DataNucleus Enhancer : Classpath
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-maven-plugin\4.0.5\datanucleus-maven-plugin-4.0.5.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+23:30:41,879 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\Desktop\freeboard2.0\freeboard\target\freeboard-1.0-SNAPSHOT\WEB-INF\classes
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-core\4.1.11\datanucleus-core-4.1.11.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-api-jpa\4.1.10\datanucleus-api-jpa-4.1.10.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-jpa-query\4.0.5\datanucleus-jpa-query-4.0.5.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-rdbms\4.1.13\datanucleus-rdbms-4.1.13.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\javax.persistence\2.1.2\javax.persistence-2.1.2.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\mysql\mysql-connector-java\5.1.17\mysql-connector-java-5.1.17.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\modelmapper\modelmapper\1.0.0\modelmapper-1.0.0.jar
+23:30:41,880 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-framework\2.0.8\endpoints-framework-2.0.8.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.6.4\jackson-annotations-2.6.4.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.6.4\jackson-core-2.6.4.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.6.4\jackson-databind-2.6.4.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jackson2\1.21.0\google-http-client-jackson2-1.21.0.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client\1.21.0\google-http-client-1.21.0.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpclient\4.0.1\httpclient-4.0.1.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-codec\commons-codec\1.3\commons-codec-1.3.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client\1.21.0\google-api-client-1.21.0.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client\1.21.0\google-oauth-client-1.21.0.jar
+23:30:41,881 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-appengine\1.21.0\google-api-client-appengine-1.21.0.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-appengine\1.21.0\google-oauth-client-appengine-1.21.0.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-servlet\1.21.0\google-oauth-client-servlet-1.21.0.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jdo\1.21.0\google-http-client-jdo-1.21.0.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-servlet\1.21.0\google-api-client-servlet-1.21.0.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\jdo\jdo2-api\2.3-eb\jdo2-api-2.3-eb.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-appengine\1.21.0\google-http-client-appengine-1.21.0.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\code\findbugs\jsr305\3.0.1\jsr305-3.0.1.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-models\1.5.9\swagger-models-1.5.9.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-api\1.6.3\slf4j-api-1.6.3.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-annotations\1.5.9\swagger-annotations-1.5.9.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-core\1.5.9\swagger-core-1.5.9.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-joda\2.4.5\jackson-datatype-joda-2.4.5.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\joda-time\joda-time\2.2\joda-time-2.2.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.4.5\jackson-dataformat-yaml-2.4.5.jar
+23:30:41,882 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\yaml\snakeyaml\1.12\snakeyaml-1.12.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-nop\1.7.21\slf4j-nop-1.7.21.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-management-control-appengine-all\1.0.5\endpoints-management-control-appengine-all-1.0.5.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\appengine\appengine-api-1.0-sdk\1.9.57\appengine-api-1.0-sdk-1.9.57.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-matchers\1.4\jcabi-matchers-1.4.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-log\0.17.2\jcabi-log-0.17.2.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-aspects\0.22\jcabi-aspects-0.22.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\aspectj\aspectjrt\1.8.4\aspectjrt-1.8.4.jar
+23:30:41,883 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\jsonwebtoken\jjwt\0.6.0\jjwt-0.6.0.jar
+23:30:41,884 (main) DEBUG [DataNucleus.Enhancer] - Enhancing classes
+23:30:41,887 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/C:/Users/alejo/Desktop/freeboard2.0/freeboard/target/freeboard-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" con handler "persistence" (validar="false")
+23:30:41,895 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "freeboard" ...
+23:30:41,897 (main) DEBUG [DataNucleus.MetaData] - Not found any metadata mapping files for resource name META-INF/orm.xml in CLASSPATH
+23:30:41,951 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+23:30:41,951 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotaciones de JPA y vamos a usarlas.
+23:30:41,981 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+23:30:41,981 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotaciones de JPA y vamos a usarlas.
+23:30:41,992 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+23:30:41,992 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotaciones de JPA y vamos a usarlas.
+23:30:41,997 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+23:30:41,998 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotaciones de JPA y vamos a usarlas.
+23:30:42,001 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+23:30:42,001 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotaciones de JPA y vamos a usarlas.
+23:30:42,005 (main) DEBUG [DataNucleus.MetaData] - Populación del MetaData ...
+23:30:42,006 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Populando Meta-Data
+23:30:42,009 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Populando Meta-Data
+23:30:42,009 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Populando Meta-Data
+23:30:42,010 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" campo "paid" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+23:30:42,010 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Populando Meta-Data
+23:30:42,010 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Populando Meta-Data
+23:30:42,011 (main) DEBUG [DataNucleus.MetaData] - Inicialisación del MetaData ...
+23:30:42,011 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Inicializando Meta-Data
+23:30:42,013 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Inicializando Meta-Data
+23:30:42,013 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Inicializando Meta-Data
+23:30:42,014 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Inicializando Meta-Data
+23:30:42,014 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Inicializando Meta-Data
+23:30:42,014 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+23:30:42,020 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" empezando ...
+23:30:42,041 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Transactions" esta enhanced.
+23:30:42,042 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Transactions
+23:30:42,042 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" ha terminado
+23:30:42,042 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" empezando ...
+23:30:42,043 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Students" esta enhanced.
+23:30:42,043 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Students
+23:30:42,043 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" ha terminado
+23:30:42,043 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" empezando ...
+23:30:42,044 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Offers" esta enhanced.
+23:30:42,044 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Offers
+23:30:42,044 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" ha terminado
+23:30:42,044 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" empezando ...
+23:30:42,045 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Companies" esta enhanced.
+23:30:42,045 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Companies
+23:30:42,045 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" ha terminado
+23:30:42,045 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" empezando ...
+23:30:42,046 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Auctions" esta enhanced.
+23:30:42,047 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Auctions
+23:30:42,047 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" ha terminado
+23:30:42,048 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 5 clases. Tiempos : input=130 ms, enhance=33 ms, total=163 ms. Compruebe el LOG para los detalles
+09:38:03,129 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+09:38:03,159 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+09:38:03,187 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+09:38:03,188 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+09:38:03,191 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 4.1.11 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar.
+09:38:03,206 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+09:38:03,218 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-core/4.1.11/datanucleus-core-4.1.11.jar!/plugin.xml.
+09:38:03,221 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jpa version 4.1.10 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar.
+09:38:03,224 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+09:38:03,224 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-api-jpa/4.1.10/datanucleus-api-jpa-4.1.10.jar!/plugin.xml.
+09:38:03,225 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.jpa.query version 4.0.5 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar.
+09:38:03,226 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+09:38:03,226 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-jpa-query/4.0.5/datanucleus-jpa-query-4.0.5.jar!/plugin.xml.
+09:38:03,227 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 4.1.13 at URL file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar.
+09:38:03,239 (main) DEBUG [DataNucleus.General] - Loading extension points from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+09:38:03,245 (main) DEBUG [DataNucleus.General] - Loading extensions from plug-in file jar:file:/C:/Users/alejo/.m2/repository/org/datanucleus/datanucleus-rdbms/4.1.13/datanucleus-rdbms-4.1.13.jar!/plugin.xml.
+09:38:03,275 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+09:38:03,307 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+09:38:03,307 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+09:38:03,330 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,byte[],java.nio.ByteBuffer
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Character,java.lang.Integer
+09:38:03,331 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double,java.nio.ByteBuffer
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long,java.nio.ByteBuffer
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,java.util.Date,java.sql.Timestamp,[Ljava.lang.Object;
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+09:38:03,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+09:38:03,333 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false
+09:38:03,333 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 4.1.11) para el API "JPA" utilisando el JRE "{2}"
+09:38:03,333 (main) DEBUG [DataNucleus.Enhancer] - DataNucleus Enhancer : Classpath
+09:38:03,333 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-maven-plugin\4.0.5\datanucleus-maven-plugin-4.0.5.jar
+09:38:03,333 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+09:38:03,333 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+09:38:03,333 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+09:38:03,333 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+09:38:03,334 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\Desktop\freeboard2.0\freeboard\target\freeboard-1.0-SNAPSHOT\WEB-INF\classes
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-core\4.1.11\datanucleus-core-4.1.11.jar
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-api-jpa\4.1.10\datanucleus-api-jpa-4.1.10.jar
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-jpa-query\4.0.5\datanucleus-jpa-query-4.0.5.jar
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\datanucleus-rdbms\4.1.13\datanucleus-rdbms-4.1.13.jar
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\datanucleus\javax.persistence\2.1.2\javax.persistence-2.1.2.jar
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\mysql\mysql-connector-java\5.1.17\mysql-connector-java-5.1.17.jar
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\modelmapper\modelmapper\1.0.0\modelmapper-1.0.0.jar
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-framework\2.0.8\endpoints-framework-2.0.8.jar
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.6.4\jackson-annotations-2.6.4.jar
+09:38:03,335 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.6.4\jackson-core-2.6.4.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.6.4\jackson-databind-2.6.4.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jackson2\1.21.0\google-http-client-jackson2-1.21.0.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client\1.21.0\google-http-client-1.21.0.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpclient\4.0.1\httpclient-4.0.1.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\httpcomponents\httpcore\4.0.1\httpcore-4.0.1.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\commons-codec\commons-codec\1.3\commons-codec-1.3.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client\1.21.0\google-api-client-1.21.0.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client\1.21.0\google-oauth-client-1.21.0.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-appengine\1.21.0\google-api-client-appengine-1.21.0.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-appengine\1.21.0\google-oauth-client-appengine-1.21.0.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\oauth-client\google-oauth-client-servlet\1.21.0\google-oauth-client-servlet-1.21.0.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-jdo\1.21.0\google-http-client-jdo-1.21.0.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\api-client\google-api-client-servlet\1.21.0\google-api-client-servlet-1.21.0.jar
+09:38:03,336 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\jdo\jdo2-api\2.3-eb\jdo2-api-2.3-eb.jar
+09:38:03,337 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+09:38:03,337 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\http-client\google-http-client-appengine\1.21.0\google-http-client-appengine-1.21.0.jar
+09:38:03,337 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\code\findbugs\jsr305\3.0.1\jsr305-3.0.1.jar
+09:38:03,337 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-models\1.5.9\swagger-models-1.5.9.jar
+09:38:03,337 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-api\1.6.3\slf4j-api-1.6.3.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-annotations\1.5.9\swagger-annotations-1.5.9.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\swagger\swagger-core\1.5.9\swagger-core-1.5.9.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\apache\commons\commons-lang3\3.2.1\commons-lang3-3.2.1.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-joda\2.4.5\jackson-datatype-joda-2.4.5.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\joda-time\joda-time\2.2\joda-time-2.2.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.4.5\jackson-dataformat-yaml-2.4.5.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\yaml\snakeyaml\1.12\snakeyaml-1.12.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\slf4j\slf4j-nop\1.7.21\slf4j-nop-1.7.21.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\endpoints\endpoints-management-control-appengine-all\1.0.5\endpoints-management-control-appengine-all-1.0.5.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\google\appengine\appengine-api-1.0-sdk\1.9.57\appengine-api-1.0-sdk-1.9.57.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-matchers\1.4\jcabi-matchers-1.4.jar
+09:38:03,338 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar
+09:38:03,339 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-log\0.17.2\jcabi-log-0.17.2.jar
+09:38:03,339 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\com\jcabi\jcabi-aspects\0.22\jcabi-aspects-0.22.jar
+09:38:03,339 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\org\aspectj\aspectjrt\1.8.4\aspectjrt-1.8.4.jar
+09:38:03,339 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\alejo\.m2\repository\io\jsonwebtoken\jjwt\0.6.0\jjwt-0.6.0.jar
+09:38:03,339 (main) DEBUG [DataNucleus.Enhancer] - Enhancing classes
+09:38:03,348 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/C:/Users/alejo/Desktop/freeboard2.0/freeboard/target/freeboard-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" con handler "persistence" (validar="false")
+09:38:03,356 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "freeboard" ...
+09:38:03,357 (main) DEBUG [DataNucleus.MetaData] - Not found any metadata mapping files for resource name META-INF/orm.xml in CLASSPATH
+09:38:03,418 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+09:38:03,418 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" tiene anotaciones de JPA y vamos a usarlas.
+09:38:03,480 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+09:38:03,480 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" tiene anotaciones de JPA y vamos a usarlas.
+09:38:03,494 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+09:38:03,494 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" tiene anotaciones de JPA y vamos a usarlas.
+09:38:03,522 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+09:38:03,522 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" tiene anotaciones de JPA y vamos a usarlas.
+09:38:03,525 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotación "javax.persistence.NamedQueries" que no esta procesado aqui. Si sea un annotacion de extension de DataNucleus, lo procesamos mas tarde.
+09:38:03,525 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" tiene anotaciones de JPA y vamos a usarlas.
+09:38:03,530 (main) DEBUG [DataNucleus.MetaData] - Populación del MetaData ...
+09:38:03,530 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Populando Meta-Data
+09:38:03,532 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Populando Meta-Data
+09:38:03,533 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Populando Meta-Data
+09:38:03,533 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" campo "paid" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+09:38:03,534 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Populando Meta-Data
+09:38:03,534 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Populando Meta-Data
+09:38:03,535 (main) DEBUG [DataNucleus.MetaData] - Inicialisación del MetaData ...
+09:38:03,535 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Transactions" : Inicializando Meta-Data
+09:38:03,537 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Students" : Inicializando Meta-Data
+09:38:03,537 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Offers" : Inicializando Meta-Data
+09:38:03,537 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Companies" : Inicializando Meta-Data
+09:38:03,537 (main) DEBUG [DataNucleus.MetaData] - Clase "com.project.freeboard.entity.Auctions" : Inicializando Meta-Data
+09:38:03,538 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+09:38:03,543 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" empezando ...
+09:38:03,562 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Transactions" esta enhanced.
+09:38:03,562 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Transactions
+09:38:03,562 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Transactions" ha terminado
+09:38:03,562 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" empezando ...
+09:38:03,563 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Students" esta enhanced.
+09:38:03,564 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Students
+09:38:03,564 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Students" ha terminado
+09:38:03,564 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" empezando ...
+09:38:03,565 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Offers" esta enhanced.
+09:38:03,565 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Offers
+09:38:03,565 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Offers" ha terminado
+09:38:03,565 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" empezando ...
+09:38:03,566 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Companies" esta enhanced.
+09:38:03,566 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Companies
+09:38:03,566 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Companies" ha terminado
+09:38:03,566 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" empezando ...
+09:38:03,567 (main) INFO  [DataNucleus.Enhancer] - La clase "com.project.freeboard.entity.Auctions" esta enhanced.
+09:38:03,567 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : com.project.freeboard.entity.Auctions
+09:38:03,567 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "com.project.freeboard.entity.Auctions" ha terminado
+09:38:03,567 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 5 clases. Tiempos : input=199 ms, enhance=29 ms, total=228 ms. Compruebe el LOG para los detalles

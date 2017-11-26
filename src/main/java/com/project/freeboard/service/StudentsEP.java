@@ -410,18 +410,17 @@ public class StudentsEP {
 	 * @throws BadRequestException
 	 */
 	@ApiMethod(name = "getCompanyAuction", path = "offers/auction/company", httpMethod = ApiMethod.HttpMethod.GET)
-	public Companies getCompanyAuction(@Named("jwt") String jwt, @Named("offerid") String id)
+	public Companies getCompanyAuction(@Named("jwt") String jwt, @Named("auctionid") String id)
 			throws NotFoundException, UnauthorizedException, BadRequestException {
 
 		if (jwt != null && id != null) {
 			getCurrentStudent(jwt);
-			Offers offer = oDAO.getOffersById(id);
-			if (offer != null) {
-				Auctions auction = offer.getAuctionsIdauctions();
-				Companies companie = auction.getCompaniesId();
+			Auctions a = aDAO.getAuctionsById(id);
+			if (a != null) {
+				Companies companie = a.getCompaniesId();
 				return companie;
 			} else {
-				throw new NotFoundException("Oferta no existe");
+				throw new NotFoundException("Subasta no existe");
 			}
 		} else {
 			throw new BadRequestException("invalid parameters");

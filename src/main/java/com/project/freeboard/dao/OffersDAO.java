@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
+import com.project.freeboard.entity.Auctions;
 import com.project.freeboard.entity.Offers;
 import com.project.freeboard.entity.Students;
 
@@ -76,7 +77,7 @@ public class OffersDAO {
 		return Offerss;
 	}
 
-	public List<Offers> getOfferssByAuction(String id) {
+	public List<Offers> getOfferssByAuction(Auctions id) {
 		List<Offers> Offerss = null;
 		TypedQuery<Offers> q = em.createNamedQuery("Offers.getOffersByAuction", Offers.class);
 		q.setParameter("auctionsIdauctions", id);
