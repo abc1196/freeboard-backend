@@ -77,10 +77,12 @@ public class CompaniesEP {
 	 *             * When the client sends invalid parameters.
 	 * @throws NotFoundException
 	 *             * When the company couldn't be added.
-	 * @throws InternalServerErrorException 
+	 * @throws InternalServerErrorException
 	 */
 	@ApiMethod(name = "signUpCompany", path = "signup/company", httpMethod = ApiMethod.HttpMethod.POST)
-	public Companies signUpCompany(Companies companies) throws BadRequestException, NotFoundException, InternalServerErrorException {
+	public Companies signUpCompany(Companies companies)
+			throws BadRequestException, NotFoundException, InternalServerErrorException {
+
 		if (companies != null) {
 
 			if (cDAO.getCompanyByEmail(companies.getEmail()) != null) {
@@ -130,7 +132,7 @@ public class CompaniesEP {
 	public Companies updateCompany(@Named("jwt") String jwt, Companies c)
 			throws NotFoundException, UnauthorizedException {
 		if (jwt != null) {
-			getCurrentCompany(jwt);
+			Companies com = getCurrentCompany(jwt);
 			c.setUpdated(getCurrentDate());
 			if (cDAO.updateCompanie(c)) {
 				return c;
@@ -324,7 +326,9 @@ public class CompaniesEP {
 	 */
 	@ApiMethod(name = "updateAuction", path = "updateAuction", httpMethod = ApiMethod.HttpMethod.PUT)
 	public Auctions updateAuction(@Named("jwt") String jwt, Auctions a) throws NotFoundException, BadRequestException {
-		if (jwt != null) {
+		if (jwt != null && a != null) {
+			a.setUpdated(getCurrentDate());
+
 			if (aDAO.updateAuctions(a)) {
 				return a;
 			} else {
@@ -562,7 +566,9 @@ public class CompaniesEP {
 			getCurrentCompany(jwt);
 			Offers winner = oDAO.getOffersById(offerid);
 			winner.setState(Offers.ACCEPTED);
-			aDAO.getAuctionsById(auctionid).setWinnerOffer(winner);
+			Auctions auction = aDAO.getAuctionsById(auctionid);
+			auction.setWinnerOffer(winner);
+			aDAO.updateAuctions(auction);
 			oDAO.updateOffers(winner);
 			return winner;
 		} else {
@@ -585,6 +591,7 @@ public class CompaniesEP {
 		if (jwt != null && auctionid != null) {
 			getCurrentCompany(jwt);
 			List<Offers> offersList = oDAO.getOfferssByAuction(aDAO.getAuctionsById(auctionid));
+
 			return offersList;
 		} else {
 			throw new BadRequestException("invalid parameters");
