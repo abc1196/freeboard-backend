@@ -679,6 +679,19 @@ public class CompaniesEP {
 			throw new BadRequestException("invalid parameters");
 		}
 	}
+	
+	@ApiMethod(name = "setPassword", path = "setPassword", httpMethod = ApiMethod.HttpMethod.PUT)
+	public Companies setPassword(@Named("password") String password, @Named("email") String email) throws InternalServerErrorException {
+		Companies c = cDAO.getCompanyByEmail(email);
+		c.setPassword(password);
+		c.setUpdated(getCurrentDate());
+		if (cDAO.updateCompanie(c)) {
+			return c;
+		} else {
+			throw new InternalServerErrorException("Error in server.");
+		}
+
+	}
 
 	/**
 	 * * Allows retrieve the name, lastname and email of the logged user *

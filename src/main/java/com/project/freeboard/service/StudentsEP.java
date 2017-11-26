@@ -263,8 +263,7 @@ public class StudentsEP {
 			if (o != null) {
 				o.setPrice(price);
 				o.setUpdated(updated);
-				if (oDAO.updateOffers(o) &&
-						aDAO.updateAuctions(o.getAuctionsIdauctions())) {
+				if (oDAO.updateOffers(o) && aDAO.updateAuctions(o.getAuctionsIdauctions())) {
 					return o;
 				} else {
 					throw new InternalServerErrorException("Error en el Servidor. Intenta más tarde.");
@@ -305,7 +304,7 @@ public class StudentsEP {
 				if (o != null) {
 					a.getOffersList().remove(o);
 					if (oDAO.removeOffers(id)) {
-						
+
 						aDAO.updateAuctions(a);
 						return new Message("Oferta eliminada");
 					} else {
@@ -610,6 +609,19 @@ public class StudentsEP {
 			}
 		}
 		return user;
+	}
+
+	@ApiMethod(name = "setPassword", path = "setPassword", httpMethod = ApiMethod.HttpMethod.PUT)
+	public Students setPassword(@Named("password") String password, @Named("email") String email) throws InternalServerErrorException {
+		Students s = sDAO.getStudentByEmail(email);
+		s.setPassword(password);
+		s.setUpdated(getCurrentDate());
+		if (sDAO.updateStudent(s)) {
+			return s;
+		} else {
+			throw new InternalServerErrorException("Error in server.");
+		}
+
 	}
 
 	/**
