@@ -412,7 +412,7 @@ public class CompaniesEP {
 		}
 	}
 
-	@ApiMethod(name = "getAllAuctionsByCompany", path = "offers", httpMethod = ApiMethod.HttpMethod.GET)
+	@ApiMethod(name = "getAllAuctionsByCompany", path = "companyauctions", httpMethod = ApiMethod.HttpMethod.GET)
 	public List<Auctions> getAllAuctionsByCompany(@Named("jwt") String jwt)
 			throws UnauthorizedException, BadRequestException {
 
